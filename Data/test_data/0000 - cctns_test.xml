@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- New document created with EditiX at Tue Jun 07 14:21:44 CEST 2011 -->
+<req_document xsi:schemaLocation="req_document.xsd req_document.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="req_document.xsd">
+
+<title>
+    <title>E-GOVERNANCE MISSION MODE PROJECT (MMP)</title>
+    <title>CRIME &amp; CRIMINAL TRACKING NETWORK AND SYSTEMS (CCTNS)</title>
+    <title>FUNCTIONAL REQUIREMENTS SPECIFICATION V1.0 (DRAFT)</title>
+    <title>MINISTRY OF HOME AFFAIRS GOVERNMENT OF INDIA</title>
+</title>
+
+<version>1.0</version>
+
+<p id="1">
+    <title>
+    INTRODUCTION
+    </title>
+    <text_body>
+        The Functional Requirements Specifications (FRS) report provides the detailed description of the functionalities required for the first version of the CCTNS. The key guiding principle behind the functional design of CCTNS V1.0 is to focus on the critical functionality that provides value to the police personnel at the cutting edge which in turn can improve the outcomes in the areas of “Investigation of Crime” and “Detection of Criminals”.
+    </text_body>
+</p>
+
+<p id="5">
+    <title>
+    FUNCTIONAL ARCHITECTURE RECOMMENDATIONS
+    </title>
+    <text_body>
+        The proposed functional architecture is modeled around centralized deployment to facilitate ease of maintenance and leverage advancement in open standards and web technologies.
+        The 3 C’s (Core-Configuration-Customization) forms the guiding principle for the architecture. The functional architecture of the CCTNS solution is given in the figure below. The functional architecture is composed of 4 major components based on SOA principles. Each of the components contains multiple services as defined by Service Definition. The core services, support layer and security and access control components can be deployed as standard components with necessary configuration changes. The customization layer can override and add to the core services based on the specific state requirements and can be plugged with the core services.
+        The deployment of the application will be at state level and will be configured and customized as per the state specific extensions.
+        The systems should be designed with the following broad guidelines:
+    </text_body>
+    
+    <p id="">
+        <title>
+        System Functionality
+        </title>
+        <req id="1">
+            <text_body>
+            The system should support multilingual interface
+            </text_body>
+        </req>
+        <req id="2">
+            <text_body>
+                The system should be designed in manner that operational data is not lost in case of any
+                failure of equipment or communication network.
+            </text_body>
+        </req>
+        <req id="3">
+            <text_body>
+             The system should work even in an offline mode with the critical functionality
+            </text_body>
+        </req>
+        <req id="4">
+            <text_body>
+            The system should be designed to have satisfactory performance even in Police Stations
+                connected on low-bandwidth
+            </text_body>
+        </req>
+        <req id="5">
+            <text_body>
+            The system should be implemented using Service Oriented Architecture (SOA) and have a
+                modular design
+            </text_body>
+        </req>
+        <req id="6">
+            <text_body>
+             The system should be developed on Open Standards
+            </text_body>
+        </req>
+        <req id="7">
+            <text_body>
+            The system should be built on a common User Access and Authentication Service to
+                ensure Single-Sign on for the end-user
+            </text_body>
+        </req>
+        <req id="8">
+            <text_body>
+             The system should be developed for a centralized deployment and maintenance
+            </text_body>
+        </req>
+        <req id="9">
+            <text_body>
+             The system should be developed to be deployed in a 3-tier datacenter architecture
+            </text_body>
+        </req>
+        <req id="10">
+            <text_body>
+                The system should be designed to have a n-tier architecture with the presentation logic
+                separated from the business logic that is again separated from the data-access logic
+            </text_body>
+        </req>
+        <req id="11">
+            <text_body>
+                The system should be extensible to provide access to the interfaces through PDA’s and
+                mobile data terminals
+            </text_body>
+        </req>
+        <req id="12">
+            <text_body>
+             The system should adopt standardized formats and common metadata elements
+            </text_body>
+        </req>
+        <req id="13">
+            <text_body>
+                The system should be designed for access through browser-based systems and must
+                impose minimal requirements on the client device
+            </text_body>
+        </req>
+        <req id="14">
+            <text_body>
+             The system must support multiple types of communication services for remote access
+            </text_body>
+        </req>
+        <req id="15">
+            <text_body>
+            The system should have capability to support public access to a subset of data and
+                functionality
+            </text_body>
+        </req>
+        <req id="16">
+            <text_body>
+             The system should support multi-tier authentication where required
+            </text_body>
+        </req>
+        <req id="17">
+            <text_body>
+             The system should support SSL encrypted connections
+            </text_body>
+        </req>
+        <req id="18">
+            <text_body>
+             The system should support secure virtual private network connections
+            </text_body>
+        </req>
+        <req id="19">
+            <text_body>
+             The system should use HTTPS as the communication protocol, i.e., HTTP over an encrypted secure socket layer (SSL)
+            </text_body>
+        </req>
+        <req id="20">
+            <text_body>
+            The system should run on multiple browsers
+            </text_body>
+        </req>
+        <req id="21">
+            <text_body>
+            The system should support selective encryption of the stored data
+            </text_body>
+        </req>
+        <req id="22">
+            <text_body>
+            The system should ensure secure transmission of data over the network and utilize SSL and 2-way digital signatures
+            </text_body>
+        </req>
+        <req id="23">
+            <text_body>
+            The system should ensure high standards of security and access control through:
+            <enum>
+                <item>Prevent cross-site scripting</item>
+                <item>Validate the incoming data / user request</item>
+                <item>Encode the incoming data / user request</item>
+                <item>Prevent SQL Injection</item>
+                <item>Utilize parameterized queries</item>
+                <item>Sanitize the user-inputs</item>
+                <item>Validate the data both at the client and server</item>
+                <item>Do not allow hard delete and perform only soft tagging the row for deletion</item>
+            </enum>
+            </text_body>
+        </req>
+        <req id="24">
+            <text_body>
+            The system should ensure high scalability and performance through:
+            <enum>
+                <item>Use of cache for storing frequent data</item>
+                <item>Use of AJAX based technology to improve user experience. Aggressive page loading to be considered based on the screen and estimate usage pattern</item>
+                <item>Leverage Asynchronous HTTP socket capabilities of web server for scalability and performance</item>
+                <item>Host all the static content (documents, images) on the web server</item>
+                <item>The search results should be fetched from the database in batches of 10 or 20 maximum
+                    as configured within the application</item>
+                <item>Display of records on the screen in batches/paged manner</item>
+                <item>The search should fetch only the fields that need to be displayed to the user. Only when
+                    the user clicks on a particular record to view its further details should a query be fired to
+                    fetch the additional details for this particular record only</item>
+                <item>A hierarchical cache should be configured and used for caching of results of most frequently used searches</item>
+                <item>Database Indexes should be applied on the key columns used for searching</item>
+            </enum>
+            </text_body>
+        </req>
+    </p>
+</p>
+
+</req_document>

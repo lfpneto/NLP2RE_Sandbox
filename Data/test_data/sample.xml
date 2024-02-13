@@ -1,0 +1,11 @@
+
+<root>
+    <item id="1">
+        <name>Item 1</name>
+        <price>10.00</price>
+    </item>
+    <item id="2">
+        <name>Item 2</name>
+        <price>20.00</price>
+    </item>
+</root>

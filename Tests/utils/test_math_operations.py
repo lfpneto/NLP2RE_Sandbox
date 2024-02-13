@@ -1,6 +1,7 @@
 # test_math_operations.py
 
-from nlp_module.utils.math_operations import add_numbers
+from src.utils.math_operations import add_numbers
+
 
 def test_add_numbers():
     assert add_numbers(1, 2) == 3
