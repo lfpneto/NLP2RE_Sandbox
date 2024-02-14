@@ -52,6 +52,8 @@ def test_clean_text_original():
 
 
 def test_clean_text():
+    text_with_punct = "Hello, World! How are you?"
+    expected_result = "Hello World How are you"
     # TODO:
     pass
 

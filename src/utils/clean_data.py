@@ -83,3 +83,23 @@ def clean_and_lemm_text(text):
     list_2_word = join_list_to_string(text_lemm)
 
     return list_2_word
+
+# N-Grams needs a string, not a list o strings
+# meaning that after tokenizing it will join the tokens again as a string
+
+
+def clean_text_2string(text):
+    text = "".join([word.lower()
+                   for word in text if word not in string.punctuation])
+    tokens = re.split('\W+', text)
+    text = " ".join([ps.stem(word)
+                    for word in tokens if word not in stopwords])
+    return text
+
+
+def clean_text_2stem(text):
+    text = "".join([word.lower()
+                   for word in text if word not in string.punctuation])
+    tokens = re.split('\W+', text)
+    text = [ps.stem(word) for word in tokens if word not in stopwords]
+    return text
