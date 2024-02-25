@@ -1,0 +1,11 @@
+{
+    "plantuml.render": "PlantUMLServer",
+    "plantuml.server": "https://www.plantuml.com/plantuml",
+    "plantuml.diagramsRoot": "Models",
+    "plantuml.exportFormat": "png",
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
