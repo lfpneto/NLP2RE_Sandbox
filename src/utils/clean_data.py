@@ -2,9 +2,9 @@ import string
 import re
 import nltk
 from nltk.stem import WordNetLemmatizer
+from nltk.corpus import stopwords
 
-
-stopwords = nltk.corpus.stopwords.words('english')
+stopwords = stopwords.words('english')
 wn = nltk.WordNetLemmatizer()
 ps = nltk.PorterStemmer()
 lemmatizer = WordNetLemmatizer()
@@ -64,8 +64,7 @@ def clean_text(text, remove_punct=True, remove_stopwords=True):
 
     # Remove stopwords if required
     if remove_stopwords:
-        stop_words = set(stopwords.words('english'))
-        tokens = [word for word in tokens if word not in stop_words]
+        tokens = [word for word in tokens if word not in stopwords]
 
     return tokens
 
