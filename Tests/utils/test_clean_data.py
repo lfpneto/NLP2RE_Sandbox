@@ -42,8 +42,19 @@ def test_tokenize():
 
 
 def test_lemmatizing():
-    # TODO:
-    pass
+    """ Lemmatizing
+
+    - See how the lemmatizing function reacts to erros, abbreviations and non indexed words
+    DAL ( Development Assurance Levels or Design Assurance Levels ) 
+    IDAL ( Item Development Assurance Levels used for the software )
+    Automotive Safety Integrity Level (ASIL)
+    ECSS-Q-ST-40 ( Safety )
+    """
+    input_1 = ["Devel", "Assurance", "DAL", "SIL", "ECSS-Q-ST-40"]
+    expected_result_1 = ["Devel", "Assurance", "DAL", "SIL", "ECSS-Q-ST-40"]
+    result_1 = clean_data.lemmatizing(input_1)
+    assert result_1 == expected_result_1
+    # TODO: Test actual lemmatization
 
 
 def test_clean_text_original():
@@ -66,3 +77,10 @@ def test_join_list_to_string():
 def test_clean_and_lemm_text():
     # TODO:
     pass
+
+
+def test_preprocess_data_str():
+    input_1 = "Hello, World! How are you?"
+    expected_result_1 = ['hello', 'world']
+    result_1 = clean_data.preprocess_data_str(input_1)
+    assert result_1 == expected_result_1

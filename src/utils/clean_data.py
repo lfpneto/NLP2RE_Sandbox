@@ -1,10 +1,18 @@
+from nltk.stem import PorterStemmer
 import string
 import re
 import nltk
+import pprint
+from gensim import corpora
+from gensim.models import LsiModel
+from nltk.tokenize import RegexpTokenizer
+from nltk.stem.porter import PorterStemmer
+import matplotlib.pyplot as plt
+from gensim.models.coherencemodel import CoherenceModel
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
+from collections import defaultdict
 
-stopwords = stopwords.words('english')
 wn = nltk.WordNetLemmatizer()
 ps = nltk.PorterStemmer()
 lemmatizer = WordNetLemmatizer()
@@ -24,19 +32,30 @@ def tokenize(text):
 
 
 def lemmatizing(tokenized_text):
+    """
+    Lemmatizes each word in the tokenized text using WordNetLemmatizer.
+
+    Parameters:
+    - tokenized_text (list of str): The list of words to be lemmatized, as tokens.
+
+    Returns:
+    - lemmatized_text (list of str): The lemmatized list of words.
+    """
     # Initialize WordNetLemmatizer
     # Lemmatize each word in the tokenized text
-    text = [lemmatizer.lemmatize(word) for word in tokenized_text]
+    lemmatizer = WordNetLemmatizer()
+    lemmatized_text = [lemmatizer.lemmatize(word) for word in tokenized_text]
 
-    return text
+    return lemmatized_text
 
 
 def clean_text_original(text):
+    en_stop = set(stopwords.words('english'))
     text = "".join([word.lower()
                    for word in text if word not in string.punctuation])
     tokens = re.split('\W+', text)
     text = " ".join([ps.stem(word)
-                    for word in tokens if word not in stopwords])
+                    for word in tokens if word not in en_stop])
     return text
 
 
@@ -54,6 +73,7 @@ def clean_text(text, remove_punct=True, remove_stopwords=True):
     """
 
     # FIXME:  V1.0 tokenized as "v1","0"
+    en_stop = set(stopwords.words('english'))
 
     # Remove punctuation
     if remove_punct:
@@ -64,7 +84,7 @@ def clean_text(text, remove_punct=True, remove_stopwords=True):
 
     # Remove stopwords if required
     if remove_stopwords:
-        tokens = [word for word in tokens if word not in stopwords]
+        tokens = [word for word in tokens if word not in en_stop]
 
     return tokens
 
@@ -88,17 +108,60 @@ def clean_and_lemm_text(text):
 
 
 def clean_text_2string(text):
+    en_stop = set(stopwords.words('english'))
+
     text = "".join([word.lower()
                    for word in text if word not in string.punctuation])
     tokens = re.split('\W+', text)
     text = " ".join([ps.stem(word)
-                    for word in tokens if word not in stopwords])
+                    for word in tokens if word not in en_stop])
     return text
 
 
 def clean_text_2stem(text):
+    en_stop = set(stopwords.words('english'))
     text = "".join([word.lower()
                    for word in text if word not in string.punctuation])
     tokens = re.split('\W+', text)
-    text = [ps.stem(word) for word in tokens if word not in stopwords]
+    text = [ps.stem(word) for word in tokens if word not in en_stop]
     return text
+
+
+def preprocess_data_list(list_string, custom_stopwords={}):
+    """
+    Input  : Document list, a set data type with custom_stopwords
+    Purpose: Preprocess text (tokenize, remove stopwords, and stemming)
+    Output : Preprocessed text
+
+    DevNotes: This is an alternative to clean text
+    """
+    tokenizer = RegexpTokenizer(r'\w+')
+    en_stop = set(stopwords.words('english'))
+    en_stop.update(custom_stopwords)
+    p_stemmer = PorterStemmer()
+    texts = []
+
+    for text in list_string:
+        raw = text.lower()
+        tokens = tokenizer.tokenize(raw)
+        stopped_tokens = [word for word in tokens if word not in en_stop]
+        stemmed_tokens = [p_stemmer.stem(word) for word in stopped_tokens]
+        texts.append(stemmed_tokens)
+
+    return texts
+
+
+def preprocess_data_str(text, custom_stopwords={}):
+    """
+    Input  : Single string representing a document, a set data type with custom_stopwords
+    Purpose: Preprocess text (tokenize, remove stopwords, and stemming)
+    Output : Preprocessed text as a list of tokens
+    """
+    tokenizer = RegexpTokenizer(r'\w+')
+    en_stop = set(stopwords.words('english'))
+    en_stop.update(custom_stopwords)
+    p_stemmer = PorterStemmer()
+    tokens = tokenizer.tokenize(text.lower())
+    stopped_tokens = [word for word in tokens if word not in en_stop]
+    stemmed_tokens = [p_stemmer.stem(word) for word in stopped_tokens]
+    return stemmed_tokens
