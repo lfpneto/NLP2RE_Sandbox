@@ -164,4 +164,5 @@ def preprocess_data_str(text, custom_stopwords={}):
     tokens = tokenizer.tokenize(text.lower())
     stopped_tokens = [word for word in tokens if word not in en_stop]
     stemmed_tokens = [p_stemmer.stem(word) for word in stopped_tokens]
+    # TODO: LEMMATIZATION is a better way to go. Can be set as a parameter
     return stemmed_tokens
