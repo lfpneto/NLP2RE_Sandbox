@@ -1,0 +1,25 @@
+@startuml class
+
+class artifacts {
+    - path2Artifacts: string
+    - namespace: string
+    - model: Model
+    - artifactsCollection: list
+
+    + setModel(model: Model): void
+}
+
+class artifact {
+    + name                      : string
+    + requirementCollection     : list
+}
+
+class requirement {
+    + Id                        : int
+    + reqText                   : string
+}
+
+artifacts   "1" *-- "*" artifact
+artifact    "1" *-- "*" requirement
+@enduml
+

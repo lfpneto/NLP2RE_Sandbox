@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "ms-python.autopep8"
+        "ms-python.autopep8",
+        "jebbs.plantuml"
     ]
 }

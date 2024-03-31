@@ -1,5 +1,8 @@
 # nlp_module
 
+from src.Requirements.requirement import Requirement
+from src.artifact.artifact import Artifact
+from src.artifacts.artifacts import Artifacts
 from gensim import models
 import sys
 from Document import Document
