@@ -6,6 +6,7 @@ class artifacts {
     - model: Model
     - artifactsCollection: list
 
+    + load_artifacts(): void
     + setModel(model: Model): void
 }
 

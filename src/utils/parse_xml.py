@@ -92,7 +92,7 @@ def merge_and_delete_items(df):
             df.iloc[i - 1, df.columns.get_loc('text')] += ' \n- ' + \
                 df.iloc[i, df.columns.get_loc('text')]
             # Drop the current row
-            df = df.drop(i).reset_index(drop=True)
+            df = df.drop(df.index[i]).reset_index(drop=True)
             # Reduce i by 1 to recheck the merged row in the next iteration
             i -= 1
         i += 1
