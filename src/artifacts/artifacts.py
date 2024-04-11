@@ -43,5 +43,5 @@ class artifacts:
 
     def initialize_artifact_BOW(self):
         for artifact in self.artifactsCollection:
-            artifact.bow = [self._dictionary.doc2bow(
-                text) for text in artifact.clean_text]
+            artifact.bow = [self.dictionary.doc2bow(
+                text) for text in artifact.cleanText]

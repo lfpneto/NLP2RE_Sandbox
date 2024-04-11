@@ -1,7 +1,7 @@
 import time
+import gensim
 from artifacts.artifacts import artifacts
 from artifacts.artifact import artifact
-from requirements.requirement import requirement
 
 
 # PATH = r'C:\dev\NLP-Sandbox\PURE\requirements-xml\0000 - cctns.xml'
@@ -15,12 +15,16 @@ def main():
     # Example usage
     for artifact_item in docs.artifactsCollection:
         print(f"Artifact Name: {artifact_item.name}")
-        print("Requirements:")
-        for requirement_item in artifact_item.requirementCollection:
-            print(
-                f"  - ID: {requirement_item.Id}, Text: {requirement_item.reqText}")
 
-    
+    # Models
+    # Train the model on the corpus/BOW.
+    bow = docs.artifactsCollection[0].bow
+
+    lda = gensim.models.ldamodel.LdaModel(
+        bow, num_topics=10, id2word=docs.dictionary)
+    # Print topics with words instead of IDs
+    for topic in lda.print_topics():
+        print(topic)
 
     while True:
         # Add a sleep statement to reduce CPU usage

@@ -14,7 +14,7 @@ class artifact {
     - name: str
     - namespace: dict
     - _df: DataFrame
-    - _clean_text: list
+    - _cleanText: list
     - _bow: list
     
     + initialize_df(): DataFrame
