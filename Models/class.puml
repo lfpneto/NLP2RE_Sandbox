@@ -3,16 +3,26 @@
 class artifacts {
     - path2Artifacts: string
     - namespace: string
-    - model: Model
-    - artifactsCollection: list
+    - _dictionary: dictionary
 
     + load_artifacts(): void
-    + setModel(model: Model): void
+    + initialize_dictionary(): dictionary
 }
 
 class artifact {
-    + name                      : string
-    + requirementCollection     : list
+    - path: str
+    - name: str
+    - namespace: dict
+    - _df: DataFrame
+    - _clean_text: list
+    - _bow: list
+    
+    + initialize_df(): DataFrame
+    + initialize_clean_text(): list
+    + initialize_bow(dictionary: dict): list
+    + df: DataFrame
+    + clean_text: list
+    + bow: list
 }
 
 class requirement {
