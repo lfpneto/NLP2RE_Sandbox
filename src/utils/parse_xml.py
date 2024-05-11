@@ -16,9 +16,9 @@ def parse_xml_to_dataframe(xml_file_path, namespace=None):
 
     This function parses the specified XML file into a pandas DataFrame. It traverses the XML tree recursively,
     extracting tag names, text content, IDs, and paths for each element in the XML file. The namespace parameter
-    can be used to handle XML files with namespace prefixes. If provided, it should be a dictionary containing a 
-    'ns' key representing the namespace prefix. The function returns a pandas DataFrame where each row corresponds 
-    to a tag in the XML file, with columns representing tag name, text content, ID (if present), and path within 
+    can be used to handle XML files with namespace prefixes. If provided, it should be a dictionary containing a
+    'ns' key representing the namespace prefix. The function returns a pandas DataFrame where each row corresponds
+    to a tag in the XML file, with columns representing tag name, text content, ID (if present), and path within
     the XML tree. Missing values in the DataFrame are filled with empty strings.
     """
 
@@ -125,3 +125,4 @@ def process_xml_with_namespace(xml_file_path, namespace):
     else:
         # If not, print a message
         print("The XML file does not have the specified namespace.")
+

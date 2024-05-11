@@ -3,8 +3,7 @@ import gensim
 from artifacts.artifacts import artifacts
 from artifacts.artifact import artifact
 
-
-# PATH = r'C:\dev\NLP-Sandbox\PURE\requirements-xml\0000 - cctns.xml'
+# SPECIFIC_PATH = r'C:\dev\NLP2RE_Sandbox\data\work_data\2006-eirene_sys_15.xml'
 PATH = r'data\work_data'
 NAMESPACE = {'ns': 'req_document.xsd'}
 
