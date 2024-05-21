@@ -1,0 +1,82 @@
+@startmindmap
+
+!theme metal
+
++ to investigate
+++ Few-Shot Text Classification
+
++ Probelm
+
+
+-- Natural Language
+--- ambiguity
+--- incompleteness
+--- inaccuracy
+
+-- Requirements
+--- Purpose
+--- Need
+--- Goal
+--- Functionality
+--- Constraint
+--- Quality
+--- Behavior
+--- Service
+--- Condition
+--- Capability
+
+-- Requirements Engineering
+--- Activities Management
+--- V&V
+--- Analysis
+--- Elicitation
+--- Traceability
+--- Others
+
+++ NLP4RE Tasks
++++ Detection
++++ Extraction
++++ Classification
++++ Modeling
++++ Tracing & relating
++++ Search & Retrieval
+
+++ NLP
++++ NLP techniques
+++++ Tier 1
+++++ Parts-of-Speech (POS) tagging
+++++ Tokenising
+++++ Parsing
+++++ Stemming
+++++ Lemmatising
+++++ Stopwords removal
+++++ Regular expressions
+++++ Key phrase extraction
+++++ Terms frequency-inverse document frequency (TF-IDF).
+
++++ Tier 2
+++++ Latent semantic indexing (LSI)
+++++ Latent semantic analysis (LSA)
+++++ Embeddings
+++++ Vector space model (VSM)
+++++ Topic modelling
+++++ Translation (language)
+++++ Named entity recognition (NER)
+++++ Document/Sentence/Word similarity
+
++++ Tier 3
+++++ Deep learning
+++++ Neural networks
+
+++ NLP Tools
++++ Stanford CoreNLP
++++ GATE
++++ NLTK
+ 
+++ NLP Resources
++++ WordNet
++++ VerbNet
++++ British National Corpus
+
+@endmindmap
+

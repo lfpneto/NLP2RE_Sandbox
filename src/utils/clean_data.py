@@ -157,11 +157,18 @@ def preprocess_data_str(text, custom_stopwords={}):
     Purpose: Preprocess text (tokenize, remove stopwords, and stemming)
     Output : Preprocessed text as a list of tokens
     """
-    tokenizer = RegexpTokenizer(r'\w+')
+
     en_stop = set(stopwords.words('english'))
     en_stop.update(custom_stopwords)
     p_stemmer = PorterStemmer()
-    tokens = tokenizer.tokenize(text.lower())
+
+    if True:
+        # decision to use gensim tokenizer
+        tokens = list(tokenize(text, lowercase=True))
+    else:
+        tokenizer = RegexpTokenizer(r'\w+')
+        tokens = tokenizer.tokenize(text.lower())
+
     stopped_tokens = [word for word in tokens if word not in en_stop]
     stemmed_tokens = [p_stemmer.stem(word) for word in stopped_tokens]
     # TODO: LEMMATIZATION is a better way to go. Can be set as a parameter
