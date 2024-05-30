@@ -1,0 +1,23 @@
+@startuml
+start
+
+:Import necessary modules;
+:Initialize NLP tools;
+
+partition "Text Preprocessing" {
+    :remove_punct function;
+    :tokenize function;
+    :lemmatizing function;
+    :clean_text_original function;
+    :clean_text function;
+    :join_list_to_string function;
+    :clean_and_lemm_text function;
+    :clean_text_2string function;
+    :clean_text_2stem function;
+    :preprocess_data_list function;
+    :preprocess_data_str function;
+    :df_tokenize function;
+}
+
+stop
+@enduml

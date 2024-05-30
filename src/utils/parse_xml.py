@@ -121,8 +121,24 @@ def process_xml_with_namespace(xml_file_path, namespace):
         df = delete_rows_with_missing_text(df)
         df = merge_and_delete_items(df)
         df = replace_multiple_spaces(df)
+        df = remove_rows_with_tag(df, 'modifier')
         return df
     else:
         # If not, print a message
         print("The XML file does not have the specified namespace.")
 
+
+def remove_rows_with_tag(df, tag_value):
+    """
+    Removes rows from a DataFrame where the attribute 'tag' has the exact content specified.
+
+    Parameters:
+        df (DataFrame): The DataFrame from which rows will be removed.
+        tag_value (str): The value of the 'tag' attribute to remove.
+
+    Returns:
+        DataFrame: A new DataFrame with rows removed where the 'tag' attribute matches the specified value.
+    """
+    # Filter out rows where the 'tag' attribute is not equal to the specified value
+    filtered_df = df[df['tag'] != tag_value]
+    return filtered_df

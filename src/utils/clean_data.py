@@ -1,8 +1,8 @@
-from nltk.stem import PorterStemmer
 import string
 import re
 import nltk
 import pprint
+from nltk.stem import PorterStemmer
 from gensim import corpora
 from gensim.models import LsiModel
 from nltk.tokenize import RegexpTokenizer
@@ -157,6 +157,8 @@ def preprocess_data_str(text, custom_stopwords={}):
     Purpose: Preprocess text (tokenize, remove stopwords, and stemming)
     Output : Preprocessed text as a list of tokens
     """
+    remove_stopwords = False
+    porter_stemmer = True
 
     en_stop = set(stopwords.words('english'))
     en_stop.update(custom_stopwords)
@@ -164,15 +166,19 @@ def preprocess_data_str(text, custom_stopwords={}):
 
     if True:
         # decision to use gensim tokenizer
-        tokens = list(tokenize(text, lowercase=True))
+        tokens = list(tokenize(text))
     else:
         tokenizer = RegexpTokenizer(r'\w+')
         tokens = tokenizer.tokenize(text.lower())
 
-    stopped_tokens = [word for word in tokens if word not in en_stop]
-    stemmed_tokens = [p_stemmer.stem(word) for word in stopped_tokens]
-    # TODO: LEMMATIZATION is a better way to go. Can be set as a parameter
-    return stemmed_tokens
+    if remove_stopwords:
+        tokens = [word for word in tokens if word not in en_stop]
+
+    if porter_stemmer:
+        # TODO: LEMMATIZATION is a better way to go. Can be set as a parameter
+        tokens = [p_stemmer.stem(word) for word in tokens]
+
+    return tokens
 
 
 def df_tokenize(df_column, min_word_freq=1):

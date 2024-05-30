@@ -1,0 +1,56 @@
+@startuml
+!define RECTANGLE #Blue
+!define ROUNDRECT #LightBlue
+!define CLOUD #Orange
+
+start
+
+:Import necessary modules and classes;
+
+rectangle "artifact class" {
+    :Define __init__ method;
+    :Define df property and setter;
+    :Define initialize_df method;
+    :Define cleanText property and setter;
+    :Define initialize_textClean method;
+    :Define bow property and setter;
+    :Define create_requirements_from_df method;
+}
+
+:Create artifact object;
+note right: Inside __init__ method
+
+:Print "artifact class object created...";
+:Set path and namespace attributes;
+:Set name attribute using os.path.basename;
+:Set requirementCollection to empty list;
+:Set _df, _cleanText, and _bow to None;
+:Call initialize_df method;
+
+rectangle "initialize_df method" {
+    :Parse XML with namespace;
+    :Assign parsed XML to self._df;
+    :Clean text using clean_data.preprocess_data_str;
+    :Store cleaned text in self._df['text_clean'];
+}
+
+:Call initialize_textClean method;
+
+rectangle "initialize_textClean method" {
+    :Tokenize cleaned text using clean_data.df_tokenize;
+    :Assign tokenized text to self._cleanText;
+}
+
+:Call create_requirements_from_df method;
+
+rectangle "create_requirements_from_df method" {
+    :Iterate over rows in self._df;
+    :Check if row['tag'] == 'req';
+    if (row['tag'] == 'req') then (yes)
+        :Create requirement object with row['id'], row['text'], row['text_clean'];
+        :Append requirement object to requirementCollection;
+    endif
+}
+
+stop
+@enduml
