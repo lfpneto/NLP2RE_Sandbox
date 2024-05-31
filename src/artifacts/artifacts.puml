@@ -10,24 +10,19 @@ class artifacts {
 }
 
 class artifact {
-    - path: str
-    - name: str
-    - namespace: dict
-    - _df: DataFrame
-    - _cleanText: list
-    - _bow: list
-    
-    + initialize_df(): DataFrame
-    + initialize_clean_text(): list
-    + initialize_bow(dictionary: dict): list
+    + name: str
     + df: DataFrame
     + clean_text: list
     + bow: list
+
+    + initialize_df(): DataFrame
+    + initialize_clean_text(): list
+    + initialize_bow(dictionary: dict): list
 }
 
 class requirement {
-    + Id                        : int
-    + reqText                   : string
+    + Id: int
+    + reqText: string
 }
 
 artifacts   "1" *-- "*" artifact

@@ -4,6 +4,8 @@ from artifacts.artifact import artifact
 from gensim import corpora
 from gensim.corpora import Dictionary
 from Utils import clean_data
+from gensim.parsing import preprocessing
+from Utils.stopwords import stopwords as stpwrd
 
 
 class artifacts:
@@ -14,7 +16,7 @@ class artifacts:
         self.artifactsCollection = []
         self.load_artifacts()
         self._dictionary = self.initialize_dictionary()
-        self.initialize_artifact_BOW()
+        self.initialize_all_BOW()
 
     def load_artifacts(self):
         for filename in os.listdir(self.path2Artifacts):
@@ -37,15 +39,35 @@ class artifacts:
     def initialize_dictionary(self):
         # initialize a Dictionary
         dct = Dictionary()
+        remove_stopwords = True
+        filter_extremes = True
 
         # add more document (extend the vocabulary)
         for artifact in self.artifactsCollection:
             list_of_lists_tokens = clean_data.df_tokenize(
                 artifact.df['text_clean'])
             dct.add_documents(list_of_lists_tokens)
+
+        if remove_stopwords:
+            stopwords_instance = stpwrd()
+            list_of_lists_tokens = [[preprocessing.remove_stopwords(
+                token) for token in tokens] for tokens in list_of_lists_tokens]
+            # Remove custom words from dictionary
+            # Get the ids of the custom words to be removed
+            ids_to_remove = [dct.token2id[word]
+                             for word in stopwords_instance.stopwords if word in dct.token2id]
+            # Filter the dictionary
+            dct.filter_tokens(bad_ids=ids_to_remove)
+            del stopwords_instance
+
+        if filter_extremes:
+            dct.filter_extremes(no_below=0, no_above=0.075, keep_n=1000000)
+
+        dct.compactify()
         return dct
 
-    def initialize_artifact_BOW(self):
+    def initialize_all_BOW(self):
+        if self._dictionary is None:
+            self.initialize_dictionary()
         for artifact in self.artifactsCollection:
-            artifact.bow = [self.dictionary.doc2bow(
-                text) for text in artifact.cleanText]
+            artifact.initialize_bow(self._dictionary)

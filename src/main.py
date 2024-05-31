@@ -13,9 +13,9 @@ def main():
     docs = artifacts(path2Artifacts=PATH, namespace=NAMESPACE)
 
     # For each .xml, creates a new artifact
-    for artifact_item in docs.artifactsCollection:
-        print(f"Artifact Name: {artifact_item.name}")
-        print(f"{artifact_item.name} has {artifact_item.df.size} documents")
+    for artifact in docs.artifactsCollection:
+        print(f"Artifact Name: {artifact.name}")
+        print(f"{artifact.name} has {artifact.df.size} documents")
 
     # Dictionary from all xml is sored in artifacts
     # print(f"Dictionary created from {docs.dictionary.num_docs} documents")
@@ -23,10 +23,11 @@ def main():
     # FIXME: how can I test that the dictionary contains all words in all documents ?
 
     # Train the model on the corpus/BOW
-    bow = docs.artifactsCollection[0].bow
-
     lda = gensim.models.ldamodel.LdaModel(
-        bow, num_topics=10, id2word=docs.dictionary)
+        [], num_topics=10, id2word=docs.dictionary)
+    for artifact in docs.artifactsCollection:
+        lda.update(artifact.bow)
+
     # Print topics with words instead of IDs
     for topic in lda.print_topics():
         print(topic)

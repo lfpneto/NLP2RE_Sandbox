@@ -56,3 +56,8 @@ class artifact:
             if row['tag'] == 'req':
                 req = requirement(row['id'], row['text'], row['text_clean'])
                 self.requirementCollection.append(req)
+
+    def initialize_bow(self, dictionary):
+        self.bow = [dictionary.doc2bow(text)
+                    for text in self._df['text_clean']]
+        return self.bow
