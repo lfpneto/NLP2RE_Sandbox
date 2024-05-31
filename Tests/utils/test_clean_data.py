@@ -1,6 +1,6 @@
 # test_clean_data.py
 
-from src.utils import clean_data
+from Utils import clean_data
 import string
 
 

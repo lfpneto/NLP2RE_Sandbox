@@ -2,6 +2,7 @@ import os
 import pprint
 from artifacts.artifact import artifact
 from gensim import corpora
+from gensim.corpora import Dictionary
 from Utils import clean_data
 
 
@@ -34,12 +35,15 @@ class artifacts:
         self._dictionary = value
 
     def initialize_dictionary(self):
-        # FIXME: dictionary only created from first artifact
-        df = self.artifactsCollection[0].df
-        clean_text = clean_data.df_tokenize(df['text_clean'], 2)
-        dictionary = corpora.Dictionary(clean_text)
-        # pprint.pprint(self._dictionary.token2id)
-        return dictionary
+        # initialize a Dictionary
+        dct = Dictionary()
+
+        # add more document (extend the vocabulary)
+        for artifact in self.artifactsCollection:
+            list_of_lists_tokens = clean_data.df_tokenize(
+                artifact.df['text_clean'])
+            dct.add_documents(list_of_lists_tokens)
+        return dct
 
     def initialize_artifact_BOW(self):
         for artifact in self.artifactsCollection:

@@ -9,14 +9,20 @@ NAMESPACE = {'ns': 'req_document.xsd'}
 
 
 def main():
+    # Open folder with .xml req's
     docs = artifacts(path2Artifacts=PATH, namespace=NAMESPACE)
 
-    # Example usage
+    # For each .xml, creates a new artifact
     for artifact_item in docs.artifactsCollection:
         print(f"Artifact Name: {artifact_item.name}")
+        print(f"{artifact_item.name} has {artifact_item.df.size} documents")
 
-    # Models
-    # Train the model on the corpus/BOW.
+    # Dictionary from all xml is sored in artifacts
+    # print(f"Dictionary created from {docs.dictionary.num_docs} documents")
+    # print(docs.dictionary)
+    # FIXME: how can I test that the dictionary contains all words in all documents ?
+
+    # Train the model on the corpus/BOW
     bow = docs.artifactsCollection[0].bow
 
     lda = gensim.models.ldamodel.LdaModel(
