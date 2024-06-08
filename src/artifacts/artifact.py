@@ -10,13 +10,13 @@ class artifact:
         self.path = path  # Assuming string type
         self.name = os.path.basename(path)  # Get the filename from the path
         self.namespace = namespace
-        self.requirementCollection = []  # List to hold requirements
+        # self.requirementCollection = []  # List to hold requirements
         self._df = None
         self._cleanText = None
         self._bow = None
         self.initialize_df()  # Set the df attribute using the setter method
         self.initialize_textClean()
-        self.create_requirements_from_df()
+        # self.create_requirements_from_df()
 
     @property
     def df(self):
