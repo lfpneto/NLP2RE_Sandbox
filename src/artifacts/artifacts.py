@@ -1,11 +1,13 @@
 import os
 import pprint
+
 from artifacts.artifact import artifact
 from gensim import corpora
 from gensim.corpora import Dictionary
 from Utils import clean_data
 from gensim.parsing import preprocessing
 from Utils.stopwords import stopwords as stpwrd
+from collections import defaultdict
 
 
 class artifacts:
@@ -17,6 +19,7 @@ class artifacts:
         self.load_artifacts()
         self._dictionary = self.initialize_dictionary()
         self.initialize_all_BOW()
+        self.all_BOW = None
 
     def load_artifacts(self):
         for filename in os.listdir(self.path2Artifacts):
@@ -71,3 +74,22 @@ class artifacts:
             self.initialize_dictionary()
         for artifact in self.artifactsCollection:
             artifact.initialize_bow(self._dictionary)
+
+    def get_all_BOW(self):
+        # FIXME: Exception has occurred: ValueError
+        # too many values to unpack (expected 2)
+        #   File "C:\dev\NLP2RE_Sandbox\src\artifacts\artifacts.py", line 84, in get_all_BOW
+        #     for term_id, freq in artifact.bow:
+
+        # Combine multiple BoW representations
+        combined_bow = defaultdict(int)
+
+        for artifact in self.artifactsCollection:
+            print(artifact.bow)  # Debugging line to print the content
+            for term_id, freq in artifact.bow:
+                if not isinstance(term_id, int) or not isinstance(freq, int):
+                    raise ValueError(
+                        "BoW list elements must be tuples of (term_id, frequency)")
+                combined_bow[term_id] += freq
+
+        return list(combined_bow.items())
