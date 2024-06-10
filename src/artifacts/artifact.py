@@ -6,7 +6,6 @@ from artifacts.requirement import requirement
 
 class artifact:
     def __init__(self, path, namespace):
-        print('artifact class object created...')
         self.path = path  # Assuming string type
         self.name = os.path.basename(path)  # Get the filename from the path
         self.namespace = namespace
@@ -17,6 +16,7 @@ class artifact:
         self.initialize_df()  # Set the df attribute using the setter method
         self.initialize_textClean()
         # self.create_requirements_from_df()
+        print(f'instance created: {self}')
 
     @property
     def df(self):

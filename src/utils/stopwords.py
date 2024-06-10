@@ -3,8 +3,8 @@ from gensim.parsing.preprocessing import STOPWORDS
 
 class stopwords:
     def __init__(self):
-        print('stopwords class object created...')
         self.stopwords = self.initialize_stpw()
+        print(f'instance created: {self}')
 
     def initialize_stpw(self):
         stopwords = set(STOPWORDS)
@@ -15,4 +15,4 @@ class stopwords:
         return stopwords
 
     def __del__(self):
-        print(f'{self} instance destroyed.')
+        print(f'instance destroyed: {self}')

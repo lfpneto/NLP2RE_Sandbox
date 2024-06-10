@@ -48,7 +48,7 @@ def find_optimal_topics(dictionary, corpus, start, limit, step):
         model_list.append(model)
         dbi = compute_cDBI(model, corpus, num_topics, dictionary)
         dbi_scores.append(dbi)
-        print(f"Num Topics: {num_topics}, DBI: {dbi}")
+        # print(f"Num Topics: {num_topics}, DBI: {dbi}")
     
     # Find the model with the lowest DBI score
     optimal_index = np.argmin(dbi_scores)

@@ -4,15 +4,14 @@ import pprint
 from artifacts.artifact import artifact
 from gensim import corpora
 from gensim.corpora import Dictionary
-from Utils import clean_data
 from gensim.parsing import preprocessing
+from Utils import clean_data
 from Utils.stopwords import stopwords as stpwrd
 from collections import defaultdict
 
 
 class artifacts:
     def __init__(self, path2Artifacts, namespace):
-        print('artifacts class object created...')
         self.path2Artifacts = path2Artifacts
         self.namespace = namespace
         self.artifactsCollection = []
@@ -20,6 +19,7 @@ class artifacts:
         self._dictionary = self.initialize_dictionary()
         self.initialize_all_BOW()
         self.all_BOW = None
+        print(f'instance created: {self}')
 
     def load_artifacts(self):
         for filename in os.listdir(self.path2Artifacts):
