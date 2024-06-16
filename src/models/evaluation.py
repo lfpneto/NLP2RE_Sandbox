@@ -1,9 +1,10 @@
 import json
 from collections import OrderedDict
 from models.topic_tools import get_reqs_by_topic
+from models.internal_metrics import perplexity
 
 
-def save_results_to_json(docs, lda_model, filename="evaluation_results.json"):
+def save_results_to_json(docs, lda_model, BOW, filename="evaluation_results.json"):
     """
     Save the evaluation results to a JSON file.
 
@@ -13,9 +14,17 @@ def save_results_to_json(docs, lda_model, filename="evaluation_results.json"):
     filename (str): The name of the JSON file to save the results.
     """
     evaluation_results = {
+        "model_metrics": [],
         "topic_summary": OrderedDict(),
         "artifacts": []
     }
+
+    metrics_result = {
+        "model": lda_model,
+        "perplexity": perplexity(lda_model, BOW)
+    }
+
+    evaluation_results["model_metrics"].append(metrics_result)
 
     topic_summary = {}
 

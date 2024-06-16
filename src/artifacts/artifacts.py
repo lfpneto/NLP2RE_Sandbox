@@ -18,7 +18,7 @@ class artifacts:
         self.load_artifacts()
         self._dictionary = self.initialize_dictionary()
         self.initialize_all_BOW()
-        self.all_BOW = None
+        self.all_BOW = self.get_all_BOW()
         print(f'instance created: {self}')
 
     def load_artifacts(self):
@@ -76,20 +76,19 @@ class artifacts:
             artifact.initialize_bow(self._dictionary)
 
     def get_all_BOW(self):
-        # FIXME: Exception has occurred: ValueError
-        # too many values to unpack (expected 2)
-        #   File "C:\dev\NLP2RE_Sandbox\src\artifacts\artifacts.py", line 84, in get_all_BOW
-        #     for term_id, freq in artifact.bow:
-
-        # Combine multiple BoW representations
-        combined_bow = defaultdict(int)
-
+        # Create a list of all clean texts from artifacts
+        cleanTexts = []
         for artifact in self.artifactsCollection:
-            print(artifact.bow)  # Debugging line to print the content
-            for term_id, freq in artifact.bow:
-                if not isinstance(term_id, int) or not isinstance(freq, int):
-                    raise ValueError(
-                        "BoW list elements must be tuples of (term_id, frequency)")
-                combined_bow[term_id] += freq
+            # Extend the list with the words from artifact.cleanText
+            cleanTexts.extend(artifact.cleanText)
 
-        return list(combined_bow.items())
+        # Join the list of words into a single string, if necessary
+        if all(isinstance(text, list) for text in cleanTexts):
+            cleanTexts = [" ".join(text) for text in cleanTexts]
+
+        # Create the BoW representation
+        # Split the joined string back to list of words if needed
+        all_BOW = [self.dictionary.doc2bow(
+            text.split()) for text in cleanTexts]
+
+        return all_BOW

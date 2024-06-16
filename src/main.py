@@ -54,7 +54,7 @@ def main():
             lambda text: get_topic_with_highest_value(docs.dictionary, lda, text))
 
     # Evaluation
-    save_results_to_json(docs, lda)
+    save_results_to_json(docs, lda, docs.all_BOW)
 
     print(f"\n### END MAIN.")
 
