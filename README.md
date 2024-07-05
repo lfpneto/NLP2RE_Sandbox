@@ -122,7 +122,7 @@ The framework comprises the following components:
    - Internal and external metrics to assess model performance
    - Resiter for human evaluation for practical applicability
 
-![framework architecture](out\architecture\architecture.png)
+![framework architecture](documentation\architecture.png)
 
 ## Limitations and Future Work
 
