@@ -1,0 +1,86 @@
+@startuml
+!theme sketchy-outline
+!theme materia
+
+start
+:Parsing;
+note right
+  Artifacts parsed to Pandas DataFrame (DF).
+  Each artifact instance contains its own DF.
+end note
+
+repeat
+partition Data Preperation {
+
+    :Tokenize;
+    note right
+    Tokenization with Parameterizable N-grams.
+    More than one N-gram can be used.
+    Tokens stored in new attribute of DF
+    end note
+
+
+    if (Stopword Removal) then (yes)
+    :Stopword Removal;
+        'note right
+        'end note
+    else (no)
+    endif
+
+    note right
+            Choose either lemma, stemmatization or none.
+    end note
+
+    if (Perform Lemmatization) then (yes)
+        :Lemmatization;
+        'note right
+        'end note
+    elseif (Perform Stemmatization) then (yes)
+        :Stemmatization;
+        
+    else ()   
+    endif
+
+    }
+
+    :Dictionary for Artifact Collection;
+    note right
+    Result from all artifacts processed into a single dictionary.
+    end note
+
+    repeat
+    :Create BoW\nfor each artifact;
+    note right
+        Individual bag of words associated to artifact instance.
+    end note
+    repeat while (more artifacts?)
+
+    partition Modeling {
+
+    note right
+        Choose between LSA or LDA.
+    end note
+
+    if () then (LSA)
+        :LSA Parametrization;
+        :Apply LSA;
+    else (LDA)
+        :LDA Parametrization;
+        :Apply LDA;
+    endif
+
+    :Topics Evaluation;
+    note right
+    Output topics returned to user for evaluation.
+    end note
+    }
+
+    
+    note right
+    User can add stopwords to dynamic list.
+    end note
+
+repeatwhile (Adds Stopwords\nto Dynamic Stopword List)
+
+stop
+@enduml

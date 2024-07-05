@@ -1,0 +1,60 @@
+@startuml
+start
+
+:Initialize Constants;
+:Initialize Artifacts;
+note right
+  path2Artifacts = PATH
+  namespace = NAMESPACE
+end note
+
+:Print Artifact Details;
+
+repeat
+  :Process Each Artifact;
+  note right
+    artifact in docs.artifactsCollection
+  end note
+repeat while (more artifacts?)
+
+:Find Optimal Number of Topics;
+note right
+  dictionary = docs.dictionary
+  bow = docs.artifactsCollection[0].bow
+  num_topics_start = NUM_TOPICS_START
+  num_topics_limit = NUM_TOPICS_LIMIT
+  num_topics_step = NUM_TOPICS_STEP
+end note
+
+:Train LDA Model;
+note right
+  num_topics = optimal_num_topics
+  id2word = docs.dictionary
+end note
+
+repeat
+  :Update LDA Model for Each Artifact;
+  note right
+    artifact_bow = artifact.bow
+  end note
+repeat while (more artifacts?)
+
+repeat
+  :Add Topics to Requirements;
+  note right
+    dictionary = docs.dictionary
+    lda = lda
+    text = artifact.df.loc[req_mask, 'text_clean']
+  end note
+repeat while (more artifacts?)
+
+:Save Results to JSON;
+note right
+  docs = docs
+  lda = lda
+  all_BOW = docs.all_BOW
+end note
+
+:End Main;
+stop
+@enduml

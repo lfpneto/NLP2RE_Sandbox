@@ -1,31 +1,68 @@
 @startuml class
 
-class artifacts {
-    - path2Artifacts: string
-    - namespace: string
-    - _dictionary: dictionary
+package Utils {
+  class parse_xml
+  class clean_data
+}
 
+
+  class artifacts {
+    - path2Artifacts: str
+    - namespace: dict
+    - artifactsCollection: list[artifact]
+    - _dictionary: Dictionary
+    - all_BOW: list[list[tuple[int, int]]]
+    __init__(path2Artifacts: str, namespace: dict)
     + load_artifacts(): void
-    + initialize_dictionary(): dictionary
-}
+    + initialize_dictionary(): Dictionary
+    + initialize_all_BOW(): void
+    + get_all_BOW(): list[list[tuple[int, int]]]
+    + dictionary: Dictionary
+  }
 
-class artifact {
-    + name: str
-    + df: DataFrame
-    + clean_text: list
-    + bow: list
-
-    + initialize_df(): DataFrame
-    + initialize_clean_text(): list
-    + initialize_bow(dictionary: dict): list
-}
-
-class requirement {
+  class artifact {
+  - path: str
+  - name: str
+  - namespace: dict
+  - _df: DataFrame
+  - _cleanText: list[str]
+  - _bow: list[list[tuple[int, int]]]
+  __init__(path: str, namespace: dict)
+  + df: DataFrame
+  + cleanText: list[str]
+  + bow: list[list[tuple[int, int]]]
+  + initialize_df(): void
+  + initialize_textClean(): void
+  + create_requirements_from_df(): void
+  + initialize_bow(dictionary: dict): list[list[tuple[int, int]]]
+  }
+  
+  class requirement {
     + Id: int
-    + reqText: string
+    }
+
+class Dictionary {
+  + add_documents(list_of_lists_tokens: list[list[str]]): None
+  + filter_tokens(bad_ids: list[int]): None
+  + filter_extremes(no_below: int, no_above: float, keep_n: int): None
+  + compactify(): None
+  + doc2bow(text: str): list[tuple[int, int]]
 }
+
+artifacts --> artifact: contains
+artifacts --> Dictionary
 
 artifacts   "1" *-- "*" artifact
 artifact    "1" *-- "*" requirement
+
+artifact --> parse_xml
+artifact --> clean_data
+artifacts --> clean_data
+
+
+
+
+
+
 @enduml
 
