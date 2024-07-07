@@ -1,5 +1,6 @@
 import time
 import gensim
+import json
 from artifacts.artifacts import artifacts
 from artifacts.artifact import artifact
 from models.lsa_optimization import find_optimal_topics
@@ -7,12 +8,27 @@ from models.topic_tools import get_topic_with_highest_value
 from models.topic_tools import get_reqs_by_topic
 from models.evaluation import save_results_to_json
 
-# SPECIFIC_PATH = r'C:\dev\NLP2RE_Sandbox\data\work_data\2006-eirene_sys_15.xml'
-PATH = r'data\work_data'
-NAMESPACE = {'ns': 'req_document.xsd'}
-NUM_TOPICS_START = 75
-NUM_TOPICS_LIMIT = 95
-NUM_TOPICS_STEP = 2
+
+def load_parameters(file_path):
+    with open(file_path, 'r') as file:
+        parameters = json.load(file)
+    return parameters
+
+
+params = load_parameters('config.json')
+
+# Access the parameters
+PATH = params['path']
+NAMESPACE = params['namespace']
+NUM_TOPICS_START = params['num_topics_start']
+NUM_TOPICS_LIMIT = params['num_topics_limit']
+NUM_TOPICS_STEP = params['num_topics_step']
+FILENAME = params['filename']
+
+# Access the nested parameters
+LSA_PARAM_1 = params['lsa']['param_1']
+LSA_PARAM_2 = params['lsa']['param_2']
+LSA_PARAM_3 = params['lsa']['param_3']
 
 
 def main():
@@ -30,10 +46,11 @@ def main():
     # print(docs.dictionary)
 
     # Find the optimal number of topics
+    optimal_num_topics = 85
     # FIXME: bow used for analysis is only from one artifact.
-    optimal_model, optimal_num_topics, dbi_scores = find_optimal_topics(
-        docs.dictionary, docs.artifactsCollection[0].bow, NUM_TOPICS_START, NUM_TOPICS_LIMIT, NUM_TOPICS_STEP)
-    print(f"\n### The optimal number of topics is: \n\t {optimal_num_topics}")
+    # optimal_model, optimal_num_topics, dbi_scores = find_optimal_topics(
+    #    docs.dictionary, docs.artifactsCollection[0].bow, NUM_TOPICS_START, NUM_TOPICS_LIMIT, NUM_TOPICS_STEP)
+    # print(f"\n### The optimal number of topics is: \n\t {optimal_num_topics}")
 
     # Train the model on the corpus/BOW
     lda = gensim.models.ldamodel.LdaModel(

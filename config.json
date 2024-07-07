@@ -1,3 +1,26 @@
 {
-    "config_1": "false"
+    "path": "data/work_data",
+    "namespace": {
+        "ns": "req_document.xsd"
+    },
+    "num_topics_start": 75,
+    "num_topics_limit": 95,
+    "num_topics_step": 2,
+    "filename": "evaluation_results.json",
+
+    "n_gram_min": 1,
+    "n_gram_max": 4,
+    "stopword_static": false,
+    "stopword_dynamic": true,
+    "stopword_dynamic_source": true,
+    "lemma": false,
+    "stemma": false,
+    "lsa": {
+        "param_1": false,
+        "param_2": false,
+        "param_3": false
+    },
+    "lda": {
+        "param_1": false
+    }
 }

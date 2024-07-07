@@ -77,18 +77,17 @@ class artifacts:
 
     def get_all_BOW(self):
         # Create a list of all clean texts from artifacts
-        cleanTexts = []
+        all_BOW = []
         for artifact in self.artifactsCollection:
-            # Extend the list with the words from artifact.cleanText
-            cleanTexts.extend(artifact.cleanText)
+            for text in artifact.cleanText:
+                # Tokenize the text if it's a string
+                if isinstance(text, str):
+                    tokens = text.split()
+                else:
+                    tokens = text
 
-        # Join the list of words into a single string, if necessary
-        if all(isinstance(text, list) for text in cleanTexts):
-            cleanTexts = [" ".join(text) for text in cleanTexts]
-
-        # Create the BoW representation
-        # Split the joined string back to list of words if needed
-        all_BOW = [self.dictionary.doc2bow(
-            text.split()) for text in cleanTexts]
+                # Create the BoW representation
+                bow = self.dictionary.doc2bow(tokens)
+                all_BOW.append(bow)
 
         return all_BOW

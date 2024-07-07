@@ -1,18 +1,32 @@
 import json
+import os
 from collections import OrderedDict
+from datetime import datetime
 from models.topic_tools import get_reqs_by_topic
 from models.internal_metrics import perplexity
 
 
-def save_results_to_json(docs, lda_model, BOW, filename="evaluation_results.json"):
+def save_results_to_json(docs, lda_model, BOW, filename=None):
     """
     Save the evaluation results to a JSON file.
 
     Parameters:
     docs (artifacts): The artifacts object containing all artifact data.
     lda_model (gensim.models.LdaModel): The trained LDA model.
-    filename (str): The name of the JSON file to save the results.
+    BOW (list): The bag-of-words representation of the corpus.
+    filename (str): The name of the JSON file to save the results. If None, a filename with the current date and time will be generated.
     """
+    # Ensure the "metrics" directory exists
+    os.makedirs("metrics", exist_ok=True)
+
+    if filename is None:
+        # Generate a filename with the current date and time if none is provided
+        current_time = datetime.now().strftime("%Y-%m-%d_%H%M%S")
+        filename = f"evaluation_results_{current_time}.json"
+
+    # Prepend the "metrics" directory to the filename
+    filepath = os.path.join("metrics", filename)
+
     evaluation_results = {
         "model_metrics": [],
         "topic_summary": OrderedDict(),
@@ -20,7 +34,7 @@ def save_results_to_json(docs, lda_model, BOW, filename="evaluation_results.json
     }
 
     metrics_result = {
-        "model": lda_model,
+        "model_lifecycle_events": lda_model.lifecycle_events,
         "perplexity": perplexity(lda_model, BOW)
     }
 
@@ -96,5 +110,5 @@ def save_results_to_json(docs, lda_model, BOW, filename="evaluation_results.json
         sorted(topic_summary.items(), key=lambda item: item[0])
     )
 
-    with open(filename, 'w') as json_file:
+    with open(filepath, 'w') as json_file:
         json.dump(evaluation_results, json_file, indent=4)
