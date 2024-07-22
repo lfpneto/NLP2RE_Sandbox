@@ -1,0 +1,37 @@
+@startuml
+'left to right direction
+!theme plain
+
+actor "Requirements Engineer" as RE
+'actor "Safety Critical System" as SCS
+
+rectangle "Initial Model Creation and Setup" {
+    usecase "Data Preparation" as UC1
+    usecase "Model Training" as UC2
+    usecase "Model Evaluation and Optimization" as UC3
+}
+
+rectangle "Handling Change Requests" {
+    usecase "Change Request Preparation" as UC4
+    usecase "Topic Association" as UC5
+}
+    usecase "Change Impact Analysis" as UC6
+
+
+RE --> UC1
+'RE --> UC2
+RE --> UC3
+RE --> UC4
+'RE --> UC5
+RE --> UC6
+
+UC1 --> UC2
+UC2 --> UC3
+
+UC4 --> UC5
+UC3 --> UC2
+UC2 --> UC5
+
+UC5 --> UC6
+
+@enduml

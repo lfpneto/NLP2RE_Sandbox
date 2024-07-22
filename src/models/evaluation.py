@@ -35,7 +35,7 @@ def save_results_to_json(docs, lda_model, BOW, filename=None):
 
     metrics_result = {
         "model_lifecycle_events": lda_model.lifecycle_events,
-        "perplexity": perplexity(lda_model, BOW)
+        # "perplexity": perplexity(lda_model, BOW)
     }
 
     evaluation_results["model_metrics"].append(metrics_result)

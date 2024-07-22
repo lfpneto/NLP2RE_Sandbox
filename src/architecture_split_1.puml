@@ -3,6 +3,7 @@
 '!theme materia
 !theme plain
 
+
 start
 :Parsing;
 note right
@@ -44,44 +45,6 @@ partition Data Preperation {
 
     }
 
-    :Dictionary for Artifact Collection;
-    note right
-    Result from all artifacts processed into a single dictionary.
-    end note
-
-    repeat
-    :Create BoW\nfor each artifact;
-    note right
-        Individual bag of words associated to artifact instance.
-    end note
-    repeat while (more artifacts?)
-
-    partition Modeling {
-
-    note right
-        Choose between LSA or LDA.
-    end note
-
-    if () then (LSA)
-        :LSA Parametrization;
-        :Apply LSA;
-    else (LDA)
-        :LDA Parametrization;
-        :Apply LDA;
-    endif
-
-    :Topics Evaluation;
-    note right
-    Output topics returned to user for evaluation.
-    end note
-    }
-
-    
-    note right
-    User can add stopwords to dynamic list.
-    end note
-
-repeatwhile (Adds Stopwords\nto Dynamic Stopword List)
 
 stop
 @enduml
