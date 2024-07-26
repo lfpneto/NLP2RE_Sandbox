@@ -6,7 +6,7 @@ from models.topic_tools import get_reqs_by_topic
 from models.internal_metrics import perplexity
 
 
-def save_results_to_json(docs, lda_model, BOW, filename=None):
+def save_results_to_json(docs, lda_model, BOW, config_filename="config.json", filename=None):
     """
     Save the evaluation results to a JSON file.
 
@@ -21,13 +21,27 @@ def save_results_to_json(docs, lda_model, BOW, filename=None):
 
     if filename is None:
         # Generate a filename with the current date and time if none is provided
-        current_time = datetime.now().strftime("%Y-%m-%d_%H%M%S")
+        # current_time = datetime.now().strftime("%Y-%m-%d_%H%M%S")
+        current_time = datetime.now().strftime("%Y-%m-%d_%Hh%Mm%Ss")
         filename = f"evaluation_results_{current_time}.json"
 
     # Prepend the "metrics" directory to the filename
     filepath = os.path.join("metrics", filename)
 
+    # Read configuration from config.json
+    try:
+        with open(config_filename, 'r') as config_file:
+            config_data = json.load(config_file)
+    except FileNotFoundError:
+        print(f"Error: Configuration file '{config_filename}' not found.")
+        config_data = {}  # Default to empty if config is not found
+    except json.JSONDecodeError:
+        print(
+            f"Error: Configuration file '{config_filename}' contains invalid JSON.")
+        config_data = {}  # Default to empty if config has invalid JSON
+
     evaluation_results = {
+        "parameters": config_data,  # Include the config data at the top level
         "model_metrics": [],
         "topic_summary": OrderedDict(),
         "artifacts": []
