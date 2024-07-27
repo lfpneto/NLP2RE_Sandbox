@@ -7,14 +7,21 @@
     "num_topics_limit": 95,
     "num_topics_step": 2,
     "filename": "evaluation_results.json",
-
-    "n_gram_min": 1,
-    "n_gram_max": 1,
-    "stopword_static": false,
-    "stopword_dynamic": true,
-    "stopword_dynamic_source": true,
-    "lemma": false,
-    "stemma": false,
+    "data_preparation": {
+        "tokenization": {
+            "n_gram_min": 1,
+            "n_gram_max": 1
+        },
+        "stopwords": {
+            "remove_stopwords": false,
+            "stopword_static": false,
+            "stopword_dynamic": false,
+            "stopword_dynamic_source": false
+        },
+        "lemma": false,
+        "stemma": false,
+        "porter_stemmer": false
+    },
     "lsa": {
         "param_1": false,
         "param_2": false,

@@ -1,0 +1,40 @@
+@startuml
+'!theme sketchy-outline
+'!theme materia
+!theme plain
+
+start
+partition Data Preperation {
+
+    :Tokenize;
+    note right
+    Tokenization with Parameterizable N-grams.
+    More than one N-gram can be used.
+    Tokens stored in new attribute of DF
+    end note
+
+
+    if (Stopword Removal) then (yes)
+    :Stopword Removal;
+        'note right
+        'end note
+    else (no)
+    endif
+
+    note right
+            Choose either lemma, stemmatization or none.
+    end note
+
+    if (Perform Lemmatization) then (yes)
+        :Lemmatization;
+        'note right
+        'end note
+    elseif (Perform Stemmatization) then (yes)
+        :Stemmatization;
+        
+    else ()   
+    endif
+
+    }
+end
+@enduml

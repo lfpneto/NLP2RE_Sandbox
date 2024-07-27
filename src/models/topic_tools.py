@@ -45,7 +45,7 @@ def get_topics_for_unseen_text(lda, dictionary, text):
     Get the topic distribution for unseen text using the trained LDA model.
     """
     # Preprocess the text
-    words = clean_data.preprocess_data_str(text)
+    words = clean_data.data_preparation(text)
 
     # Convert text to BoW representation
     bow = dictionary.doc2bow(words)

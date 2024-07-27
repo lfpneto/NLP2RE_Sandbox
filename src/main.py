@@ -10,11 +10,10 @@ from models.topic_tools import get_topics_for_unseen_text
 from models.topic_tools import display_topics
 from models.topic_tools import find_matching_requirements
 from models.evaluation import save_results_to_json
+from utils.utils import load_parameters
 
-from utils import utils
 
-
-params = utils.load_parameters('config.json')
+params = load_parameters('config.json')
 
 # Access the parameters
 PATH = params['path']
@@ -73,7 +72,7 @@ def main():
     save_results_to_json(docs, lda, docs.all_BOW)
 
     # Query with new, unseen document
-    while True:
+    while False:
         print("\nEnter your text to get the associated topics (type 'exit' to quit):")
         user_input = input()
         if user_input.lower() == 'exit':

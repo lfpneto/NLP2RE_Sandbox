@@ -12,10 +12,63 @@ from gensim.models.coherencemodel import CoherenceModel
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 from collections import defaultdict
+from utils.utils import load_parameters
 
 wn = nltk.WordNetLemmatizer()
 ps = nltk.PorterStemmer()
 lemmatizer = WordNetLemmatizer()
+stemmer = PorterStemmer()
+en_stop = set(stopwords.words('english'))
+
+# Access the parameters
+params = load_parameters('config.json')
+N_GRAM_MIN = params['data_preparation']['tokenization']['n_gram_min']
+N_GRAM_MAX = params['data_preparation']['tokenization']['n_gram_max']
+REMOVE_STOPWORDS = params['data_preparation']['stopwords']['remove_stopwords']
+STOPWORD_STATIC = params['data_preparation']['stopwords']['stopword_static']
+STOPWORD_DYNAMIC = params['data_preparation']['stopwords']['stopword_dynamic']
+STOPWORD_DYNAMIC_SOURCE = params['data_preparation']['stopwords']['stopword_dynamic_source']
+PORTER_STEMMER = params['data_preparation']['porter_stemmer']
+LEMMA = params['data_preparation']['lemma']
+STEMMA = params['data_preparation']['stemma']
+
+
+def data_preparation(text,
+                     n_gram_min=N_GRAM_MIN,
+                     n_gram_max=N_GRAM_MAX,
+                     remove_stopwords=REMOVE_STOPWORDS,
+                     stopword_static=STOPWORD_STATIC,
+                     stopword_dynamic=STOPWORD_DYNAMIC,
+                     stopword_dynamic_source=STOPWORD_DYNAMIC_SOURCE,
+                     lemma=LEMMA,
+                     stemma=STEMMA,
+                     porter_stemmer=PORTER_STEMMER):
+    """
+    Input  : Single string representing a document, optional parameters for N-gram range,
+             stopword removal, lemmatization, stemming, and custom stopwords.
+    Purpose: Preprocess text with tokenization, optional stopword removal, and either lemmatization or stemming.
+    Output : Preprocessed text as a list of tokens
+    """
+
+    # Tokenize
+    tokens = tokenize(text)
+
+    # stopword removal
+    if remove_stopwords:
+        tokens = [word for word in tokens if word not in en_stop]
+
+        if stopword_dynamic:
+            en_stop.update(stopword_dynamic_source)
+
+    # Choose either lemmatization, stemming, or neither
+    if lemma:
+        tokens = [lemmatizer.lemmatize(word) for word in tokens]
+    elif stemma:
+        tokens = [stemmer.stem(word) for word in tokens]
+    elif porter_stemmer:
+        # TODO: LEMMATIZATION is a better way to go. Can be set as a parameter
+        tokens = [p_stemmer.stem(word) for word in tokens]
+    return tokens
 
 
 def remove_punct(text):
@@ -27,7 +80,17 @@ def remove_punct(text):
 
 
 def tokenize(text):
-    tokens = re.split('\W+', text)
+    # FIXME: Missing n-grams implementation
+    if True:
+        # option 1
+        # Decided to use gensim tokenizer
+        tokens = list(re.split('\W+', text))
+
+    elif False:
+        # option 2
+        tokenizer = RegexpTokenizer(r'\w+')
+        tokens = tokenizer.tokenize(text.lower())
+
     return tokens
 
 
@@ -149,36 +212,6 @@ def preprocess_data_list(list_string, custom_stopwords={}):
         texts.append(stemmed_tokens)
 
     return texts
-
-
-def preprocess_data_str(text, custom_stopwords={}):
-    """
-    Input  : Single string representing a document, a set data type with custom_stopwords
-    Purpose: Preprocess text (tokenize, remove stopwords, and stemming)
-    Output : Preprocessed text as a list of tokens
-    """
-    remove_stopwords = False
-    porter_stemmer = True
-
-    en_stop = set(stopwords.words('english'))
-    en_stop.update(custom_stopwords)
-    p_stemmer = PorterStemmer()
-
-    if True:
-        # decision to use gensim tokenizer
-        tokens = list(tokenize(text))
-    else:
-        tokenizer = RegexpTokenizer(r'\w+')
-        tokens = tokenizer.tokenize(text.lower())
-
-    if remove_stopwords:
-        tokens = [word for word in tokens if word not in en_stop]
-
-    if porter_stemmer:
-        # TODO: LEMMATIZATION is a better way to go. Can be set as a parameter
-        tokens = [p_stemmer.stem(word) for word in tokens]
-
-    return tokens
 
 
 def df_tokenize(df_column, min_word_freq=1):

@@ -30,7 +30,7 @@ class artifact:
         self._df = parse_xml.process_xml_with_namespace(
             self.path, self.namespace)
         self._df['text_clean'] = self._df['text'].apply(
-            lambda x: clean_data.preprocess_data_str(x))
+            lambda x: clean_data.data_preparation(x))
 
     @property
     def cleanText(self):
