@@ -1,4 +1,4 @@
-from Utils import clean_data
+from utils import clean_data
 
 
 def get_topic_with_highest_value(dictionary, model, text):

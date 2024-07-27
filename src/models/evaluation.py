@@ -6,7 +6,7 @@ from models.topic_tools import get_reqs_by_topic
 from models.internal_metrics import perplexity
 
 
-def save_results_to_json(docs, lda_model, BOW, config_filename="config.json", filename=None):
+def save_results_to_json(docs, lda_model, BOW, config_filename="config.json", filename=None, foldername="evaluation_log"):
     """
     Save the evaluation results to a JSON file.
 
@@ -17,7 +17,7 @@ def save_results_to_json(docs, lda_model, BOW, config_filename="config.json", fi
     filename (str): The name of the JSON file to save the results. If None, a filename with the current date and time will be generated.
     """
     # Ensure the "metrics" directory exists
-    os.makedirs("metrics", exist_ok=True)
+    os.makedirs(foldername, exist_ok=True)
 
     if filename is None:
         # Generate a filename with the current date and time if none is provided
@@ -25,8 +25,7 @@ def save_results_to_json(docs, lda_model, BOW, config_filename="config.json", fi
         current_time = datetime.now().strftime("%Y-%m-%d_%Hh%Mm%Ss")
         filename = f"evaluation_results_{current_time}.json"
 
-    # Prepend the "metrics" directory to the filename
-    filepath = os.path.join("metrics", filename)
+    filepath = os.path.join(foldername, filename)
 
     # Read configuration from config.json
     try:

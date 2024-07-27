@@ -9,7 +9,7 @@
     "filename": "evaluation_results.json",
 
     "n_gram_min": 1,
-    "n_gram_max": 4,
+    "n_gram_max": 1,
     "stopword_static": false,
     "stopword_dynamic": true,
     "stopword_dynamic_source": true,

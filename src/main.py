@@ -11,7 +11,7 @@ from models.topic_tools import display_topics
 from models.topic_tools import find_matching_requirements
 from models.evaluation import save_results_to_json
 
-from Utils import utils
+from utils import utils
 
 
 params = utils.load_parameters('config.json')

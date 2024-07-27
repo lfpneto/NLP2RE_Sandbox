@@ -1,6 +1,6 @@
 import os
-from Utils import parse_xml
-from Utils import clean_data
+from utils import parse_xml
+from utils import clean_data
 from artifacts.requirement import requirement
 
 

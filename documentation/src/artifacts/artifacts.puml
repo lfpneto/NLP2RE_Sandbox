@@ -1,4 +1,5 @@
 @startuml class
+!theme plain
 
 package Utils {
   class parse_xml
@@ -21,25 +22,26 @@ package Utils {
   }
 
   class artifact {
-  - path: str
-  - name: str
-  - namespace: dict
-  - _df: DataFrame
-  - _cleanText: list[str]
-  - _bow: list[list[tuple[int, int]]]
-  __init__(path: str, namespace: dict)
-  + df: DataFrame
-  + cleanText: list[str]
-  + bow: list[list[tuple[int, int]]]
-  + initialize_df(): void
-  + initialize_textClean(): void
-  + create_requirements_from_df(): void
-  + initialize_bow(dictionary: dict): list[list[tuple[int, int]]]
+    -path: str
+    -name: str
+    -namespace: str
+    -_df: DataFrame
+    -_cleanText: List[str]
+    -_bow: List[Tuple[int, int]]
+    -requirementCollection: List[requirement]
+    
+    +__init__(path: str, namespace: str)
+    +initialize_df(): void
+    +initialize_textClean(): void
+    +create_requirements_from_df(): void
+    +initialize_bow(dictionary: corpora.Dictionary): List[Tuple[int, int]]
+
+    {static} +df: DataFrame
+    {static} +cleanText: List[str]
+    {static} +bow: List[Tuple[int, int]]
   }
   
-  class requirement {
-    + Id: int
-    }
+
 
 class Dictionary {
   + add_documents(list_of_lists_tokens: list[list[str]]): None

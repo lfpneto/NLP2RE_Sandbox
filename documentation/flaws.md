@@ -1,6 +1,4 @@
-Identifying flaws in a set of requirements is an important task in systems engineering. It involves analyzing the given requirements to ensure they are complete, unambiguous, consistent, feasible, and verifiable. I'll analyze the uploaded **ERTMS/ETCS Functional Requirements Specification (FRS)** document to identify potential flaws or areas of improvement.
-
-## Common Types of Flaws in Requirements
+# Common Types of Flaws in Requirements
 
 When examining requirements, we usually look for several common types of flaws:
 
@@ -12,7 +10,7 @@ When examining requirements, we usually look for several common types of flaws:
 6. **Redundancy**: The requirement duplicates another requirement unnecessarily.
 7. **Unnecessary Constraints**: The requirement imposes constraints that are not needed.
 
-### Analysis of the ERTMS/ETCS FRS Document
+## Analysis of the ERTMS/ETCS FRS Document
 
 Let's analyze the document for potential flaws in the requirements specified. Here are some observations based on a quick review:
 

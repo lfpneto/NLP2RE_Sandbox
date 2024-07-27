@@ -5,8 +5,8 @@ from artifacts.artifact import artifact
 from gensim import corpora
 from gensim.corpora import Dictionary
 from gensim.parsing import preprocessing
-from Utils import clean_data
-from Utils.stopwords import stopwords as stpwrd
+from utils import clean_data
+from utils.stopwords import stopwords as stpwrd
 from collections import defaultdict
 
 

@@ -1,30 +1,39 @@
 \chapter{Evaluation} \label{chap:chap6}
 
-
 To evaluate the result, we will evaluate the framework capacity to identify requierments subjected to change by the introduction of a new requirement.
 
-1. 
-A new requirement has to created.
+To evaluate the perfomrance we will refer to the document Functional Requirement Specifications for the ERTMS/ETCS System in Finland (ETCS FI-FRS), 2018-12-14</issue_date>, as it is publicly acssessible. 
 
 
+The (ETCS FI-FRS) has been ordered by Finnish Transport Agency and written by railway experts from Proxion Plan Oy in close cooperation with the Finnish
+Transport Safety Agency Trafi, VR-Group Ltd. and rolling stock and equipment suppliers (Siemens, Ansaldo STS).
 
-
-#
 The 2007 ERTMS XML document and the 2018 FRS XML document both focus on European Train Control System (ETCS) specifications, but they target different aspects and contexts. 
 Specific functional requirements for ETCS implementation in Finland.
 Introduction tailored to Finnish ETCS requirements.
 Focuses on compliance with Finnish national regulations.
 Provides a brief summary of ETCS Level 2 in Finland.
 
-<p>The chosen baseline for the ETCS implementation in Finland is Baseline 3, with Level 2 functionality. This choice ensures compatibility with other European implementations and supports advanced functionalities such as continuous communication and full supervision.</p>
+
+Using the (ETCS FI-FRS), a new requirement has to created:
+
+OPTION 1: The chosen baseline for the ETCS implementation in Finland is Baseline 3, with Level 2 functionality. This choice ensures compatibility with other European implementations and supports advanced functionalities such as continuous communication and full supervision.
+
+OPTION 2: National ETCS Parameters. The following national ETCS parameters are defined for Finland, Q_NVDRIVER_ADHES, 1, Driver adhesion factor. Q_NVGUARDBRAKE, 0, Guard brake enabled. V_NVSHUNT, 30, Maximum shunting speed in km/h
 
 
-National ETCS Parameters. The following national ETCS parameters are defined for Finland:
-Q_NVDRIVER_ADHES, 1, Driver adhesion factor.
-Q_NVGUARDBRAKE, 0, Guard brake enabled
-V_NVSHUNT, 30, Maximum shunting speed in km/h
+Having identified the proceudure, lets run the framework and evaluate the results:
 
+1.
+start by creating a model using 3 data sources :
+- 2006-eirene_sys_15.xml 
+- 2007-eirene_fun_7-2.xml 
+- 2007-ertms.xml
 
+2. Run the model creation with the following parameters: 
+"n_gram_min": 1,
+"n_gram_max": 1,
+...
 
 
 

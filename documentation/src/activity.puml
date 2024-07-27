@@ -1,13 +1,8 @@
 @startuml
 start
 
-:Initialize Constants;
+:Initialize Parameters;
 :Initialize Artifacts;
-note right
-  path2Artifacts = PATH
-  namespace = NAMESPACE
-end note
-
 :Print Artifact Details;
 
 repeat
