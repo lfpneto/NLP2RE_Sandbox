@@ -6,16 +6,15 @@ from artifacts.artifact import artifact
 from models.lsa_optimization import find_optimal_topics
 from models.topic_tools import get_topic_with_highest_value
 from models.topic_tools import get_reqs_by_topic
+from models.topic_tools import get_topics_for_unseen_text
+from models.topic_tools import display_topics
+from models.topic_tools import find_matching_requirements
 from models.evaluation import save_results_to_json
 
-
-def load_parameters(file_path):
-    with open(file_path, 'r') as file:
-        parameters = json.load(file)
-    return parameters
+from Utils import utils
 
 
-params = load_parameters('config.json')
+params = utils.load_parameters('config.json')
 
 # Access the parameters
 PATH = params['path']
@@ -73,7 +72,23 @@ def main():
     # Evaluation
     save_results_to_json(docs, lda, docs.all_BOW)
 
-    print(f"\n### END MAIN.")
+    # Query with new, unseen document
+    while True:
+        print("\nEnter your text to get the associated topics (type 'exit' to quit):")
+        user_input = input()
+        if user_input.lower() == 'exit':
+            break
+
+        # Get topics for unseen text
+        topics = get_topics_for_unseen_text(lda, docs.dictionary, user_input)
+        # Ensure topics is a list of tuples
+        if not isinstance(topics, list):
+            print("Unexpected format for topics:", topics)
+            continue
+
+        # Display the topics
+        display_topics(topics, lda)
+        find_matching_requirements(docs, topics)
 
 
 if __name__ == "__main__":

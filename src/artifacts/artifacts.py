@@ -21,13 +21,6 @@ class artifacts:
         self.all_BOW = self.get_all_BOW()
         print(f'instance created: {self}')
 
-    def load_artifacts(self):
-        for filename in os.listdir(self.path2Artifacts):
-            if filename.endswith(".xml"):
-                xml_file_path = os.path.join(self.path2Artifacts, filename)
-                self.artifactsCollection.append(
-                    artifact(xml_file_path, self.namespace))
-
     def __str__(self):
         return f"Artifacts({self.path2Artifacts})"
 
@@ -38,6 +31,13 @@ class artifacts:
     @dictionary.setter
     def dictionary(self, value):
         self._dictionary = value
+
+    def load_artifacts(self):
+        for filename in os.listdir(self.path2Artifacts):
+            if filename.endswith(".xml"):
+                xml_file_path = os.path.join(self.path2Artifacts, filename)
+                self.artifactsCollection.append(
+                    artifact(xml_file_path, self.namespace))
 
     def initialize_dictionary(self):
         # initialize a Dictionary

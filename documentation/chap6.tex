@@ -1,0 +1,79 @@
+\chapter{Evaluation} \label{chap:chap6}
+
+
+To evaluate the result, we will evaluate the framework capacity to identify requierments subjected to change by the introduction of a new requirement.
+
+1. 
+A new requirement has to created.
+
+
+
+
+#
+The 2007 ERTMS XML document and the 2018 FRS XML document both focus on European Train Control System (ETCS) specifications, but they target different aspects and contexts. 
+Specific functional requirements for ETCS implementation in Finland.
+Introduction tailored to Finnish ETCS requirements.
+Focuses on compliance with Finnish national regulations.
+Provides a brief summary of ETCS Level 2 in Finland.
+
+<p>The chosen baseline for the ETCS implementation in Finland is Baseline 3, with Level 2 functionality. This choice ensures compatibility with other European implementations and supports advanced functionalities such as continuous communication and full supervision.</p>
+
+
+National ETCS Parameters. The following national ETCS parameters are defined for Finland:
+Q_NVDRIVER_ADHES, 1, Driver adhesion factor.
+Q_NVGUARDBRAKE, 0, Guard brake enabled
+V_NVSHUNT, 30, Maximum shunting speed in km/h
+
+
+
+
+
+
+\section{Model Creation}
+\section{Using the models}
+
+
+
+% #NOTE: - The importance of evaluating the performance of a topic modeling algorithm 
+Metrics are indispensable for evaluating the results of machine learning techniques because they provide a quantitative basis for assessing the quality, validity, and efficiency of the models. They facilitate comparison, guide model selection and tuning, ensure interpretability, and help build trust in the models. 
+
+%To validate the effectiveness and applicability of the developed model
+This chapter provides a broad overview of metrics for evaluation of unsupervised models. The primary goal of the evaluation is to asses the performance of the proposed solution, as the evaluation is registered for different parameters as the model is further scaled, to measure the quality of the topics generated, ensure the model's robustness, and explore the interpretability and distinctiveness of the topics. 
+
+% Internal metrics, such as perplexity and coherence scores, provide quantitative measures of the model's performance using data intrinsic to the model. External metrics, including human judgment and comparisons to known labels, offer qualitative insights into the model's interpretability and practical relevance.
+
+In addition to the commonly used metrics, this chapter also discusses potential evaluation methods to be explored for improvement.
+
+% The structure of this chapter is as follows: Section 2 details the internal evaluation metrics used, including perplexity and coherence scores. Section 3 presents the results of the external evaluation, highlighting the findings from human judgment and ground truth comparisons. Section 4 explores additional methods that were considered for future exploration, providing a foundation for continued research and improvement. Finally, Section 5 summarizes the evaluation findings and discusses their implications for the overall performance of the topic modeling algorithm.
+
+% Hyperparameter Tuning
+%Metrics are essential for tuning hyperparameters of unsupervised learning algorithms. For instance, the number of clusters in k-means can be chosen based on metrics like the Elbow Method or Silhouette Score.
+
+\section{Registering results}
+% How we are registering and gathering metrics
+
+
+
+A record of parameters, configurations and obtained metrics is needed in each run of model creation, for evaluating the quality of the models throughout it's evolution. When a  model is established, the developed tool outputs a JSON file containing parameters used in model creation and results from artifacts analysis.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/EvaluationResults_1png.png}
+    \caption{Evaluation results: Summary of topics}
+    \label{fig:EvaluationResults_1png}
+\end{figure}
+
+Topic are organized by ID, containing their corresponding keywords with respective weights, IDs of requirements linked to each topic (grouped by artifact) and the records for total number of requirements per topic and artifact. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/EvaluationResults_2png.png}
+    \caption{Evaluation results: Requirement analysis}
+    \label{fig:EvaluationResults_2png}
+\end{figure}
+
+For each requirement processed, the tool registers ID, text, tokenized text, associated topic ID, and topic keywords, subsequently compiling this structured information into the JSON format. 
+
+This approach ensures that data is neatly organized and accessible. Saving these metrics in JSON format facilitates easy sharing and further exploration of model outcomes, enabling comprehensive analysis and interpretation of results.
+
+

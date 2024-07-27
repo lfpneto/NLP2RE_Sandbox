@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- New document created with EditiX at Tue Jun 07 14:21:44 CEST 2011 -->
+<req_document
+    xsi:schemaLocation="req_document.xsd req_document.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="req_document.xsd">
+
+    <title>Functional Requirement Specifications for the ERTMS/ETCS System in Finland (ETCS FI-FRS)</title>
+    <version>40eng/2018</version>
+    <issue_date>
+    2018-12-14</issue_date>
+        <file_number>
+        978-952-317-646-1</file_number>
+               
+    
+    <Preface>
+        <text_body>This specification (ETCS FI-FRS) has been ordered by Finnish Transport Agency
+    (FTA) and written by railway experts from Proxion Plan Oy in close cooperation with the Finnish
+    Transport Safety Agency Trafi, VR-Group Ltd. and rolling stock and equipment suppliers (Siemens,
+    Ansaldo STS).</text_body>
+        <Project_Organization>
+            <Member>
+                <Name>Aki Härkönen</Name>
+                <Organization>Finnish Transport Agency</Organization>
+            </Member>
+            <Member>
+                <Name>Heidi Sunnari</Name>
+                <Organization>Proxion Plan Oy</Organization>
+            </Member>
+            <Member>
+                <Name>Jussi Nieminen</Name>
+                <Organization>Proxion Plan Oy</Organization>
+            </Member>
+            <Member>
+                <Name>Lauri Aarnio</Name>
+                <Organization>Proxion Plan Oy</Organization>
+            </Member>
+            <Member>
+                <Name>Pekka Myyrä</Name>
+                <Organization>VR-Group Ltd</Organization>
+            </Member>
+            <Member>
+                <Name>Ari Julku</Name>
+                <Organization>VR-Group Ltd</Organization>
+            </Member>
+        </Project_Organization>
+    </Preface>
+    <Table_of_text_bodys>
+        <Section>
+            <Number>1</Number>
+            <Title>Introduction</Title>
+        </Section>
+        <Section>
+            <Number>2</Number>
+            <Title>Terms and Abbreviations</Title>
+        </Section>
+        <Section>
+            <Number>3</Number>
+            <Title>General</Title>
+            <Subsection>
+                <Number>3.1</Number>
+                <Title>Choice of Baseline and Level</Title>
+            </Subsection>
+            <Subsection>
+                <Number>3.2</Number>
+                <Title>National Values</Title>
+                <Subsubsection>
+                    <Number>3.2.1</Number>
+                    <Title>National ETCS Parameters</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>3.2.2</Number>
+                    <Title>Country-Specific Identifiers</Title>
+                </Subsubsection>
+            </Subsection>
+            <Subsection>
+                <Number>3.3</Number>
+                <Title>Modes</Title>
+                <Subsubsection>
+                    <Number>3.3.1</Number>
+                    <Title>Mode Restrictions</Title>
+                </Subsubsection>
+            </Subsection>
+            <Subsection>
+                <Number>3.4</Number>
+                <Title>Data Communication</Title>
+            </Subsection>
+            <Subsection>
+                <Number>3.5</Number>
+                <Title>ETCS Data Recording</Title>
+            </Subsection>
+            <Subsection>
+                <Number>3.6</Number>
+                <Title>Reliability, Availability, Maintainability, and Safety (RAMS)</Title>
+            </Subsection>
+        </Section>
+        <Section>
+            <Number>4</Number>
+            <Title>ETCS Train and Axle Load Categories</Title>
+            <Subsection>
+                <Number>4.1</Number>
+                <Title>ETCS Train Categories</Title>
+                <Subsubsection>
+                    <Number>4.1.1</Number>
+                    <Title>Cant Deficiency Train Category</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>4.1.2</Number>
+                    <Title>Other International Train Categories</Title>
+                </Subsubsection>
+            </Subsection>
+            <Subsection>
+                <Number>4.2</Number>
+                <Title>Axle Load Categories</Title>
+            </Subsection>
+            <Subsection>
+                <Number>4.3</Number>
+                <Title>Speed Profiles and Speed Restrictions</Title>
+                <Subsubsection>
+                    <Number>4.3.1</Number>
+                    <Title>Static Speed Profiles</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>4.3.2</Number>
+                    <Title>Axle Load Speed Profiles</Title>
+                </Subsubsection>
+            </Subsection>
+            <Subsection>
+                <Number>4.4</Number>
+                <Title>ETCS Categories of Passenger Trains</Title>
+            </Subsection>
+            <Subsection>
+                <Number>4.5</Number>
+                <Title>ETCS Categories of Freight Trains</Title>
+            </Subsection>
+            <Subsection>
+                <Number>4.6</Number>
+                <Title>Other Speed Restrictions</Title>
+                <Subsubsection>
+                    <Number>4.6.1</Number>
+                    <Title>Temporary Speed Restrictions</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>4.6.2</Number>
+                    <Title>Signalling Related Speed Restrictions</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>4.6.3</Number>
+                    <Title>Mode-Specific Speed Restrictions</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>4.6.4</Number>
+                    <Title>Maximum Permitted Speed</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>4.6.5</Number>
+                    <Title>STM Speed Restrictions</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>4.6.6</Number>
+                    <Title>Level Crossing Speed Restrictions</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>4.6.7</Number>
+                    <Title>Override Speed Restrictions</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>4.6.8</Number>
+                    <Title>Speed Restriction for Permitted Braking Distance</Title>
+                </Subsubsection>
+            </Subsection>
+        </Section>
+        <Section>
+            <Number>5</Number>
+            <Title>Trackside Equipments</Title>
+            <Subsection>
+                <Number>5.1</Number>
+                <Title>Balise Messages</Title>
+                <Subsubsection>
+                    <Number>5.1.1</Number>
+                    <Title>Structure and Length of Balise Messages</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>5.1.2</Number>
+                    <Title>Message Packets</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>5.1.3</Number>
+                    <Title>National Definitions Related with Balise Messages</Title>
+                </Subsubsection>
+            </Subsection>
+            <Subsection>
+                <Number>5.2</Number>
+                <Title>Data Transmission Distances</Title>
+            </Subsection>
+            <Subsection>
+                <Number>5.3</Number>
+                <Title>Naming Trackside Equipment</Title>
+            </Subsection>
+            <Subsection>
+                <Number>5.4</Number>
+                <Title>Trackside Equipment Placement</Title>
+            </Subsection>
+            <Subsection>
+                <Number>5.5</Number>
+                <Title>Transition Between Train Control Systems</Title>
+                <Subsubsection>
+                    <Number>5.5.1</Number>
+                    <Title>Transition from ETCS Track to JKV Track</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>5.5.2</Number>
+                    <Title>Transition from JKV Track to ETCS Track</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>5.5.3</Number>
+                    <Title>Transition Border Planning</Title>
+                </Subsubsection>
+            </Subsection>
+            <Subsection>
+                <Number>5.6</Number>
+                <Title>ETCS Track Maintenance and Inspection</Title>
+                <Subsubsection>
+                    <Number>5.6.1</Number>
+                    <Title>Maintenance Methods</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>5.6.2</Number>
+                    <Title>Inspection Requirements</Title>
+                </Subsubsection>
+            </Subsection>
+        </Section>
+        <Section>
+            <Number>6</Number>
+            <Title>Rolling Stock Requirements</Title>
+            <Subsection>
+                <Number>6.1</Number>
+                <Title>Onboard ETCS Subsystems</Title>
+                <Subsubsection>
+                    <Number>6.1.1</Number>
+                    <Title>ETCS Baseline 3</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>6.1.2</Number>
+                    <Title>Onboard Speed and Distance Measurements</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>6.1.3</Number>
+                    <Title>National Values for Trainborne Equipment</Title>
+                </Subsubsection>
+            </Subsection>
+            <Subsection>
+                <Number>6.2</Number>
+                <Title>Braking Performance</Title>
+                <Subsubsection>
+                    <Number>6.2.1</Number>
+                    <Title>Braking Curves</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>6.2.2</Number>
+                    <Title>Minimum Brake Percentage Requirements</Title>
+                </Subsubsection>
+            </Subsection>
+            <Subsection>
+                <Number>6.3</Number>
+                <Title>Rolling Stock Diagnostics and Monitoring</Title>
+                <Subsubsection>
+                    <Number>6.3.1</Number>
+                    <Title>Fault Detection</Title>
+                </Subsubsection>
+                <Subsubsection>
+                    <Number>6.3.2</Number>
+                    <Title>Remote Monitoring and Diagnostic Systems</Title>
+                </Subsubsection>
+            </Subsection>
+        </Section>
+        <Section>
+            <Number>7</Number>
+            <Title>Testing and Validation</Title>
+            <Subsection>
+                <Number>7.1</Number>
+                <Title>Test Procedures</Title>
+            </Subsection>
+            <Subsection>
+                <Number>7.2</Number>
+                <Title>Validation Criteria</Title>
+            </Subsection>
+            <Subsection>
+                <Number>7.3</Number>
+                <Title>Field Testing</Title>
+            </Subsection>
+        </Section>
+        <Section>
+            <Number>8</Number>
+            <Title>Maintenance and Operations</Title>
+            <Subsection>
+                <Number>8.1</Number>
+                <Title>Maintenance Procedures</Title>
+            </Subsection>
+            <Subsection>
+                <Number>8.2</Number>
+                <Title>Operational Guidelines</Title>
+            </Subsection>
+            <Subsection>
+                <Number>8.3</Number>
+                <Title>Fault Reporting and Response</Title>
+            </Subsection>
+        </Section>
+        <Appendices>
+            <Appendix>
+                <Number>A</Number>
+                <Title>List of ETCS National Values</Title>
+            </Appendix>
+            <Appendix>
+                <Number>B</Number>
+                <Title>Glossary of Terms and Abbreviations</Title>
+            </Appendix>
+            <Appendix>
+                <Number>C</Number>
+                <Title>Contact Details for Key Organizations</Title>
+            </Appendix>
+        </Appendices>
+    </Table_of_text_bodys>
+    <text_body>
+        <Section number="1">
+            <Title>Introduction</Title>
+            <p>
+                <text_body>This document provides functional requirements specifications for the
+    European Train
+                    Control System (ETCS) Level 2 implementation in Finland, known as ETCS FI-FRS.
+                </text_body>
+            </p>
+            <p>
+                <text_body>The specifications outlined here are intended to guide the development
+                    and
+                    implementation of ETCS systems that comply with Finnish national requirements
+                    and
+                    European
+                    interoperability standards.
+                </text_body>
+            </p>
+        </Section>
+        <Section number="2">
+            <Title>Terms and Abbreviations</Title>
+            <Term>
+                <Name>ERTMS</Name>
+                <Definition>European Rail Traffic Management System</Definition>
+            </Term>
+            <Term>
+                <Name>ETCS</Name>
+                <Definition>European Train Control System</Definition>
+            </Term>
+            <Term>
+                <Name>RAMS</Name>
+                <Definition>Reliability, Availability, Maintainability, and Safety</Definition>
+            </Term>
+            <Term>
+                <Name>STM</Name>
+                <Definition>Specific Transmission Module</Definition>
+            </Term>
+            <Term>
+                <Name>Balise</Name>
+                <Definition>An electronic beacon or transponder placed between the rails of a
+                    railway</Definition>
+            </Term>
+        </Section>
+        <Section number="3">
+            <Title>General</Title>
+            <Subsection number="3.1">
+                <Title>Choice of Baseline and Level</Title>
+                <p>
+                    <text_body>The chosen baseline for the ETCS implementation in Finland is
+                        Baseline 3, with
+                        Level 2 functionality. This choice ensures compatibility with other European
+    implementations and
+                        supports advanced functionalities such as continuous communication and full
+    supervision.
+                    </text_body>
+                </p>
+            </Subsection>
+            <Subsection number="3.2">
+                <Title>National Values</Title>
+                <Subsubsection number="3.2.1">
+                    <Title>National ETCS Parameters</Title>
+                    <p>
+                        <text_body>The following national ETCS parameters are defined for Finland:
+                        </text_body>
+                    </p>
+                    <Parameter>
+                        <Name>Q_NVDRIVER_ADHES</Name>
+                        <Value>1</Value>
+                        <Description>Driver adhesion factor</Description>
+                    </Parameter>
+                    <Parameter>
+                        <Name>Q_NVGUARDBRAKE</Name>
+                        <Value>0</Value>
+                        <Description>Guard brake enabled</Description>
+                    </Parameter>
+                    <Parameter>
+                        <Name>V_NVSHUNT</Name>
+                        <Value>30</Value>
+                        <Description>Maximum shunting speed in km/h</Description>
+                    </Parameter>
+                </Subsubsection>
+                <Subsubsection number="3.2.2">
+                    <Title>Country-Specific Identifiers</Title>
+                    <p>
+                        <text_body>Country-specific identifiers are used to ensure compatibility
+                            with Finnish
+                            operational procedures. These include unique identifiers for trackside
+    equipment and rolling
+                            stock registration.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+            </Subsection>
+            <Subsection number="3.3">
+                <Title>Modes</Title>
+                <Subsubsection number="3.3.1">
+                    <Title>Mode Restrictions</Title>
+                    <p>
+                        <text_body>Certain operational modes have specific restrictions to ensure
+    safety and
+                            compliance with national regulations. These include restrictions on
+    shunting
+                            mode in high-speed
+                            areas and the use of staff responsible mode in specific scenarios.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+            </Subsection>
+            <Subsection number="3.4">
+                <Title>Data Communication</Title>
+                <p>
+                    <text_body>The ETCS system in Finland employs GSM-R for data communication
+    between onboard
+                        units and trackside equipment. The system supports continuous data
+    transmission
+                        for real-time
+                        updates and supervision.
+                    </text_body>
+                </p>
+            </Subsection>
+            <Subsection number="3.5">
+                <Title>ETCS Data Recording</Title>
+                <p>
+                    <text_body>Data recording requirements are defined to ensure accurate logging of
+    events and
+                        operations for safety analysis and incident investigation. The ETCS onboard
+    system is required
+                        to record all relevant data with timestamps and location information.
+                    </text_body>
+                </p>
+            </Subsection>
+            <Subsection number="3.6">
+                <Title>Reliability, Availability, Maintainability, and Safety (RAMS)</Title>
+                <p>
+                    <text_body>RAMS requirements are critical for the ETCS implementation to ensure
+    the system
+                        meets safety standards and operational reliability. The system is designed
+                        to
+                        achieve high
+                        availability with minimum downtime.
+                    </text_body>
+                </p>
+            </Subsection>
+        </Section>
+        <Section number="4">
+            <Title>ETCS Train and Axle Load Categories</Title>
+            <Subsection number="4.1">
+                <Title>ETCS Train Categories</Title>
+                <Subsubsection number="4.1.1">
+                    <Title>Cant Deficiency Train Category</Title>
+                    <p>
+                        <text_body>Trains operating under ETCS in Finland are categorized based on
+    cant
+                            deficiency parameters. This categorization ensures safe operation at
+    curves
+                            and
+                            inclines.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="4.1.2">
+                    <Title>Other International Train Categories</Title>
+                    <p>
+                        <text_body>International train categories recognized by ETCS are adopted to
+    ensure
+                            interoperability with cross-border services.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+            </Subsection>
+            <Subsection number="4.2">
+                <Title>Axle Load Categories</Title>
+                <p>
+                    <text_body>Axle load categories are defined to ensure track integrity and
+                        safety.
+                        These
+                        categories influence the permissible speed and train operations under ETCS
+    supervision.
+                    </text_body>
+                </p>
+            </Subsection>
+            <Subsection number="4.3">
+                <Title>Speed Profiles and Speed Restrictions</Title>
+                <Subsubsection number="4.3.1">
+                    <Title>Static Speed Profiles</Title>
+                    <p>
+                        <text_body>Static speed profiles are predefined for each track segment to
+    ensure
+                            trains adhere to safe operating speeds based on track conditions and
+    geometry.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="4.3.2">
+                    <Title>Axle Load Speed Profiles</Title>
+                    <p>
+                        <text_body>Axle load-specific speed profiles are defined to adjust
+    permissible
+                            speeds based on train
+
+                            weight and axle distribution, ensuring track safety.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+            </Subsection>
+            <Subsection number="4.4">
+                <Title>ETCS Categories of Passenger Trains</Title>
+                <p>
+                    <text_body>Passenger trains are categorized based on ETCS standards to ensure
+    appropriate supervision and speed management during operations.
+                    </text_body>
+                </p>
+            </Subsection>
+            <Subsection number="4.5">
+                <Title>ETCS Categories of Freight Trains</Title>
+                <p>
+                    <text_body>Freight trains are classified according to ETCS standards, allowing
+    for
+                        proper speed restrictions and supervision based on cargo type and weight.
+                    </text_body>
+                </p>
+            </Subsection>
+            <Subsection number="4.6">
+                <Title>Other Speed Restrictions</Title>
+                <Subsubsection number="4.6.1">
+                    <Title>Temporary Speed Restrictions</Title>
+                    <p>
+                        <text_body>Temporary speed restrictions are imposed based on track
+    conditions,
+                            maintenance activities, and other factors affecting safe operation.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="4.6.2">
+                    <Title>Signalling Related Speed Restrictions</Title>
+                    <p>
+                        <text_body>Speed restrictions related to signalling conditions ensure that
+    trains
+                            operate within safe parameters when passing through signal-controlled
+    sections.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="4.6.3">
+                    <Title>Mode-Specific Speed Restrictions</Title>
+                    <p>
+                        <text_body>Certain operational modes have specific speed restrictions to
+    enhance
+                            safety and ensure compliance with national regulations.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="4.6.4">
+                    <Title>Maximum Permitted Speed</Title>
+                    <p>
+                        <text_body>The maximum permitted speed for ETCS operations in Finland is
+    defined
+                            by
+                            national regulations and track design criteria.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="4.6.5">
+                    <Title>STM Speed Restrictions</Title>
+                    <p>
+                        <text_body>Specific Transmission Module (STM) speed restrictions are applied
+    in
+                            areas where legacy systems interface with ETCS-equipped trains.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="4.6.6">
+                    <Title>Level Crossing Speed Restrictions</Title>
+                    <p>
+                        <text_body>Level crossing areas have specific speed restrictions to ensure
+    safety
+                            for both rail and road users.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="4.6.7">
+                    <Title>Override Speed Restrictions</Title>
+                    <p>
+                        <text_body>Override speed restrictions are imposed under specific conditions
+    to
+                            maintain safe operations during emergency or exceptional circumstances.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="4.6.8">
+                    <Title>Speed Restriction for Permitted Braking Distance</Title>
+                    <p>
+                        <text_body>Speed restrictions are defined to ensure trains have adequate
+    braking
+                            distance in various operational scenarios.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+            </Subsection>
+        </Section>
+        <Section number="5">
+            <Title>Trackside Equipments</Title>
+            <Subsection number="5.1">
+                <Title>Balise Messages</Title>
+                <Subsubsection number="5.1.1">
+                    <Title>Structure and Length of Balise Messages</Title>
+                    <p>
+                        <text_body>Balise messages are structured to convey essential trackside
+    information
+                            to the onboard ETCS systems. The length and format of these messages are
+    standardized to ensure compatibility.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="5.1.2">
+                    <Title>Message Packets</Title>
+                    <p>
+                        <text_body>Message packets within balise messages contain data specific to
+    track
+                            conditions, speed restrictions, and operational instructions.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="5.1.3">
+                    <Title>National Definitions Related with Balise Messages</Title>
+                    <p>
+                        <text_body>National definitions for balise messages are established to
+    include
+                            country-specific operational requirements and parameters.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+            </Subsection>
+            <Subsection number="5.2">
+                <Title>Data Transmission Distances</Title>
+                <p>
+                    <text_body>Data transmission distances between trackside equipment and onboard
+    units
+                        are
+                        defined to ensure effective communication and system responsiveness.
+                    </text_body>
+                </p>
+            </Subsection>
+            <Subsection number="5.3">
+                <Title>Naming Trackside Equipment</Title>
+                <p>
+                    <text_body>Trackside equipment is named and identified based on a standardized
+    naming
+                        convention to facilitate maintenance and operational clarity.
+                    </text_body>
+                </p>
+            </Subsection>
+            <Subsection number="5.4">
+                <Title>Trackside Equipment Placement</Title>
+                <p>
+                    <text_body>Placement guidelines for trackside equipment are provided to ensure
+    optimal
+                        performance and adherence to safety standards.
+                    </text_body>
+                </p>
+            </Subsection>
+            <Subsection number="5.5">
+                <Title>Transition Between Train Control Systems</Title>
+                <Subsubsection number="5.5.1">
+                    <Title>Transition from ETCS Track to JKV Track</Title>
+                    <p>
+                        <text_body>Procedures for transitioning from ETCS-controlled track to JKV
+    track
+                            are
+                            defined to ensure seamless operations and safety compliance.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="5.5.2">
+                    <Title>Transition from JKV Track to ETCS Track</Title>
+                    <p>
+                        <text_body>Procedures for transitioning from JKV-controlled track to ETCS
+    track
+                            are
+                            outlined to maintain operational continuity and safety.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="5.5.3">
+                    <Title>Transition Border Planning</Title>
+                    <p>
+                        <text_body>Transition borders are planned and marked to facilitate smooth
+    transitions between different train control systems.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+            </Subsection>
+            <Subsection number="5.6">
+                <Title>ETCS Track Maintenance and Inspection</Title>
+                <Subsubsection number="5.6.1">
+                    <Title>Maintenance Methods</Title>
+                    <p>
+                        <text_body>Maintenance methods for ETCS tracks are defined to ensure system
+    reliability and track integrity. Regular inspections and updates are
+                            required.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="5.6.2">
+                    <Title>Inspection Requirements</Title>
+                    <p>
+                        <text_body>Inspection requirements include specific criteria and schedules
+    for assessing trackside equipment and overall system performance.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+            </Subsection>
+        </Section>
+        <Section number="6">
+            <Title>Rolling Stock Requirements</Title>
+            <Subsection number="6.1">
+                <Title>Onboard ETCS Subsystems</Title>
+                <Subsubsection number="6.1.1">
+                    <Title>ETCS Baseline 3</Title>
+                    <p>
+                        <text_body>The onboard ETCS subsystems must comply with Baseline 3
+    specifications to
+                            ensure compatibility and functionality with trackside equipment.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="6.1.2">
+                    <Title>Onboard Speed and Distance Measurements</Title>
+                    <p>
+                        <text_body>Speed and distance measurement systems onboard must meet accuracy
+    requirements to ensure effective supervision and control.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="6.1.3">
+                    <Title>National Values for Trainborne Equipment</Title>
+                    <p>
+                        <text_body>National values for trainborne equipment are defined to ensure
+    compliance
+                            with Finnish operational standards and safety requirements.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+            </Subsection>
+            <Subsection number="6.2">
+                <Title>Braking Performance</Title>
+                <Subsubsection number="6.2.1">
+                    <Title>Braking Curves</Title>
+                    <p>
+                        <text_body>Braking curves are established to define the expected
+                            deceleration
+                            and
+                            stopping distances for trains under various conditions.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="6.2.2">
+                    <Title>Minimum Brake Percentage Requirements</Title>
+                    <p>
+                        <text_body>Minimum brake percentage requirements are specified to ensure
+    adequate
+                            braking performance for different train configurations.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+            </Subsection>
+            <Subsection number="6.3">
+                <Title>Rolling Stock Diagnostics and Monitoring</Title>
+                <Subsubsection number="6.3.1">
+                    <Title>Fault Detection</Title>
+                    <p>
+                        <text_body>Onboard diagnostics systems must be capable of detecting faults
+    and
+                            anomalies to ensure timely maintenance and operational safety.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+                <Subsubsection number="6.3.2">
+                    <Title>Remote Monitoring and Diagnostic Systems</Title>
+                    <p>
+                        <text_body>Remote monitoring systems are implemented to provide real-time
+    data
+                            on
+                            rolling stock conditions and performance, aiding in predictive
+    maintenance.
+                        </text_body>
+                    </p>
+                </Subsubsection>
+            </Subsection>
+        </Section>
+        <Section number="7">
+            <Title>Testing and Validation</Title>
+            <Subsection number="7.1">
+                <Title>Test Procedures</Title>
+                <p>
+                    <text_body>Test procedures are established to validate ETCS system performance
+    and
+                        compliance with national and international standards.
+                    </text_body>
+                </p>
+            </Subsection>
+            <Subsection number="7.2">
+                <Title>Validation Criteria</Title>
+                <p>
+                    <text_body>Validation criteria are defined to ensure ETCS systems meet the
+    required
+                        performance metrics and safety standards.
+                    </text_body>
+                </p>
+            </Subsection>
+            <Subsection number="7.3">
+                <Title>Field Testing</Title>
+                <p>
+                    <text_body>Field testing procedures are outlined to evaluate system performance
+    under
+                        real-world conditions and operational scenarios.
+                    </text_body>
+                </p>
+            </Subsection>
+        </Section>
+        <Section number="8">
+            <Title>Maintenance and Operations</Title>
+            <Subsection number="8.1">
+                <Title>Maintenance Procedures</Title>
+                <p>
+                    <text_body>Maintenance procedures are established to ensure system reliability
+    and longevity, including regular inspections and updates.
+                    </text_body>
+                </p>
+
+
+            </Subsection>
+            <Subsection number="8.2">
+                <Title>Operational Guidelines</Title>
+                <p>
+                    <text_body>Operational guidelines are provided to ensure safe and efficient ETCS
+    operations, including speed management and response to emergencies.
+                    </text_body>
+                </p>
+            </Subsection>
+            <Subsection number="8.3">
+                <Title>Fault Reporting and Response</Title>
+                <p>
+                    <text_body>Procedures for fault reporting and response are established to ensure
+    timely
+                        resolution of issues and minimize operational disruptions.
+                    </text_body>
+                </p>
+            </Subsection>
+        </Section>
+
+        <Appendices>
+            <Appendix number="A">
+                <Title>List of ETCS National Values</Title>
+                <p>
+                    <text_body>This appendix provides a comprehensive list of ETCS national values
+    used in Finland, detailing the specific parameters and configurations applicable to the Finnish
+    railway network.
+                    </text_body>
+                </p>
+            </Appendix>
+            <Appendix number="B">
+                <Title>Glossary of Terms and Abbreviations</Title>
+                <p>
+                    <text_body>The glossary provides definitions for terms and abbreviations used
+    throughout the
+                        document, ensuring clarity and understanding of the technical language.
+                    </text_body>
+                </p>
+            </Appendix>
+            <Appendix number="C">
+                <Title>Contact Details for Key Organizations</Title>
+                <p>
+                    <text_body>Contact details for key organizations involved in the ETCS
+    implementation in
+                        Finland are provided for reference and communication purposes.
+                    </text_body>
+                </p>
+            </Appendix>
+        </Appendices>
+    </text_body>
+
+</req_document>
