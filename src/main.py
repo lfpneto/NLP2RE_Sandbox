@@ -1,17 +1,22 @@
-import time
 import gensim
-import json
 from artifacts.artifacts import artifacts
-from artifacts.artifact import artifact
-from models.lsa_optimization import find_optimal_topics
 from models.topic_tools import get_topic_with_highest_value
-from models.topic_tools import get_reqs_by_topic
 from models.topic_tools import get_topics_for_unseen_text
 from models.topic_tools import display_topics
 from models.topic_tools import find_matching_requirements
+from models.internal_metrics import cosine_similarity_matrix
+from models.internal_metrics import extract_high_similarity_pairs
+from models.internal_metrics import print_high_similarity_pairs
 from models.evaluation import save_results_to_json
 from utils.utils import load_parameters
+import logging
 
+# Set up basic configuration for logging
+logging.basicConfig(
+    level=logging.ERROR,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[logging.StreamHandler()]  # Logs to the console
+)
 
 params = load_parameters('config.json')
 
@@ -22,11 +27,11 @@ NUM_TOPICS_START = params['num_topics_start']
 NUM_TOPICS_LIMIT = params['num_topics_limit']
 NUM_TOPICS_STEP = params['num_topics_step']
 FILENAME = params['filename']
-
+TOPIC_SIMILARITY_THRESHOLD = params['topic_similarity_threshold']
 # Access the nested parameters
-LSA_PARAM_1 = params['lsa']['param_1']
-LSA_PARAM_2 = params['lsa']['param_2']
-LSA_PARAM_3 = params['lsa']['param_3']
+NUM_TOPICS = params['lsa']['num_topics']
+# LSA_PARAM_2 = params['lsa']['min_doc_freq']
+# LSA_PARAM_3 = params['lsa']['normalization']
 
 
 def main():
@@ -36,7 +41,7 @@ def main():
     # For each .xml, creates a new artifact
     for artifact in docs.artifactsCollection:
         print(
-            f"Artifact Name: {artifact.name} \n\t has {artifact.df.size} documents")
+            f"Artifact Name: {artifact.name} \n  has {artifact.df.size} documents")
 
     # Dictionary from all xml is stored in artifacts
     # FIXME: how can I test the dictionary, e.g contains relevant words in all documents ?
@@ -44,7 +49,6 @@ def main():
     # print(docs.dictionary)
 
     # Find the optimal number of topics
-    optimal_num_topics = 85
     # FIXME: bow used for analysis is only from one artifact.
     # optimal_model, optimal_num_topics, dbi_scores = find_optimal_topics(
     #    docs.dictionary, docs.artifactsCollection[0].bow, NUM_TOPICS_START, NUM_TOPICS_LIMIT, NUM_TOPICS_STEP)
@@ -52,7 +56,7 @@ def main():
 
     # Train the model on the corpus/BOW
     lda = gensim.models.ldamodel.LdaModel(
-        [], num_topics=optimal_num_topics, id2word=docs.dictionary)
+        [], num_topics=NUM_TOPICS, id2word=docs.dictionary)
     for artifact in docs.artifactsCollection:
         lda.update(artifact.bow)
     # print("\n### Topic descriptors:")
@@ -68,11 +72,20 @@ def main():
         artifact.df.loc[req_mask, 'topics'] = artifact.df.loc[req_mask, 'text_clean'].apply(
             lambda text: get_topic_with_highest_value(docs.dictionary, lda, text))
 
-    # Evaluation
+    # METRICS
+    similarity_matrix, topics = cosine_similarity_matrix(lda)
+    high_similarity_pairs = extract_high_similarity_pairs(
+        similarity_matrix, lda, threshold=TOPIC_SIMILARITY_THRESHOLD)
+    print_high_similarity_pairs(high_similarity_pairs)
+
+    # Optional: Visualize the clustering results
+    # plot_similarity_matrix(similarity_matrix, cluster_assignments)
+
+    # EVALUATION
     save_results_to_json(docs, lda, docs.all_BOW)
 
     # Query with new, unseen document
-    while False:
+    while True:
         print("\nEnter your text to get the associated topics (type 'exit' to quit):")
         user_input = input()
         if user_input.lower() == 'exit':

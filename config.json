@@ -22,12 +22,17 @@
         "stemma": false,
         "porter_stemmer": false
     },
+    "topic_similarity_threshold": 0.6,
     "lsa": {
-        "param_1": false,
-        "param_2": false,
-        "param_3": false
+        "num_topics": 85,
+        "min_doc_freq ": 1,
+        "normalization": false
     },
     "lda": {
-        "param_1": false
+        "num_topics": 85,
+        "passes": 10,
+        "eval_every": 1,
+        "iterations": 2,
+        "minimum_probability": 1.0
     }
 }

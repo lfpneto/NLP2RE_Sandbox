@@ -1,17 +1,21 @@
 import string
 import re
+import os
+import json
 import nltk
 import pprint
-from nltk.stem import PorterStemmer
 from gensim import corpora
 from gensim.models import LsiModel
-from nltk.tokenize import RegexpTokenizer
-from nltk.stem.porter import PorterStemmer
-import matplotlib.pyplot as plt
 from gensim.models.coherencemodel import CoherenceModel
+from collections import defaultdict
+import matplotlib.pyplot as plt
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
-from collections import defaultdict
+from nltk.stem import PorterStemmer
+from nltk.tokenize import RegexpTokenizer
+from nltk.stem.porter import PorterStemmer
+
+
 from utils.utils import load_parameters
 
 wn = nltk.WordNetLemmatizer()
@@ -20,17 +24,32 @@ lemmatizer = WordNetLemmatizer()
 stemmer = PorterStemmer()
 en_stop = set(stopwords.words('english'))
 
-# Access the parameters
-params = load_parameters('config.json')
-N_GRAM_MIN = params['data_preparation']['tokenization']['n_gram_min']
-N_GRAM_MAX = params['data_preparation']['tokenization']['n_gram_max']
-REMOVE_STOPWORDS = params['data_preparation']['stopwords']['remove_stopwords']
-STOPWORD_STATIC = params['data_preparation']['stopwords']['stopword_static']
-STOPWORD_DYNAMIC = params['data_preparation']['stopwords']['stopword_dynamic']
-STOPWORD_DYNAMIC_SOURCE = params['data_preparation']['stopwords']['stopword_dynamic_source']
-PORTER_STEMMER = params['data_preparation']['porter_stemmer']
-LEMMA = params['data_preparation']['lemma']
-STEMMA = params['data_preparation']['stemma']
+try:
+    # Attempt to load parameters
+    params = load_parameters('config.json')
+    N_GRAM_MIN = params['data_preparation']['tokenization']['n_gram_min']
+    N_GRAM_MAX = params['data_preparation']['tokenization']['n_gram_max']
+    REMOVE_STOPWORDS = params['data_preparation']['stopwords']['remove_stopwords']
+    STOPWORD_STATIC = params['data_preparation']['stopwords']['stopword_static']
+    STOPWORD_DYNAMIC = params['data_preparation']['stopwords']['stopword_dynamic']
+    STOPWORD_DYNAMIC_SOURCE = params['data_preparation']['stopwords']['stopword_dynamic_source']
+    PORTER_STEMMER = params['data_preparation']['porter_stemmer']
+    LEMMA = params['data_preparation']['lemma']
+    STEMMA = params['data_preparation']['stemma']
+
+except Exception as e:
+    # Catch-all for any other unexpected exceptions
+    print(f"An error occurred: {str(e)}")
+    # FIXME: Jupyter notebooks kernel is not using the same enviorment
+    N_GRAM_MIN = 1
+    N_GRAM_MAX = 1
+    REMOVE_STOPWORDS = False
+    STOPWORD_STATIC = False
+    STOPWORD_DYNAMIC = False
+    STOPWORD_DYNAMIC_SOURCE = False
+    PORTER_STEMMER = False
+    LEMMA = False
+    STEMMA = False
 
 
 def data_preparation(text,
@@ -65,9 +84,6 @@ def data_preparation(text,
         tokens = [lemmatizer.lemmatize(word) for word in tokens]
     elif stemma:
         tokens = [stemmer.stem(word) for word in tokens]
-    elif porter_stemmer:
-        # TODO: LEMMATIZATION is a better way to go. Can be set as a parameter
-        tokens = [p_stemmer.stem(word) for word in tokens]
     return tokens
 
 

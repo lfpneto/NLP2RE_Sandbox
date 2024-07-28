@@ -56,7 +56,7 @@ Additionally, when evaluated to good results, the outcomes from topic modeling c
 
 Before working with Conda, it’s always good practice to ensure that the latest version is installed. Open an Anaconda Prompt or terminal and enter:
 
-0. **Clone the repository:**
+1. **Clone the repository:**
 
     ```bash
     conda update conda --all
@@ -64,21 +64,21 @@ Before working with Conda, it’s always good practice to ensure that the latest
 
 To install and run this project using Anaconda, follow these steps:
 
-1. **Clone the repository:**
+2. **Clone the repository:**
 
     ```bash
     git clone https://github.com/lfpneto/NLP2RE_Sandbox
     cd NLP2RE_Sandbox
     ```
 
-2. **Create and activate a new conda environment:**
+3. **Create and activate a new conda environment:**
 
     ```bash
     conda env create -f environment.yml
     conda activate NLP2RE_Sandbox
     ```
 
-3. **Install the required dependencies:**
+4. **Install the required dependencies:**
 
     ```bash
     conda install --file requirements.txt

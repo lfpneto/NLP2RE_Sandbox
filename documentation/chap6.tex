@@ -31,20 +31,47 @@ start by creating a model using 3 data sources :
 - 2007-ertms.xml
 
 
-Now lets see the data cleaning srategy, figure 1 
+Now lets see the data cleaning strategy, figure 1 
 2. Run the model creation with the following parameters: 
 "n_gram_min": 1,
 "n_gram_max": 1,
 no removal of stopwords 
 no stemming or lemming
-lets analise the results
+using LDA with hard clustering (only one topic per req)
 
+lets analise the results
+figure 2 shows the results, the requirement, the cleaned up text and the topic identified to the requierment.
+taking the example of req_id : "1.4.1.4", "10.2.1", "10.3.2"
+"text_clean" shows us the result of the data cleaning process. This is the tokenized data used to create the model. 
+As we can see, by not removing stopwords in the cleaned data, the topics identified contain words such as "it" that do not had value to the topic, as well as isolated numbers.
+Human Evaluation: Directly assesses the comprehension and usefulness of the topics through human ratings.
+The results that we read in the topic have nothing to do with what is in the requierments, meaning that topic creation has not been sucessful.
+
+topic distance
+
+
+
+
+
+one of the option that could be used to clean the topic from not meaningfull words would be to set a parameter in lda to discard from a topic words that have a a probability lower than a certain value, but has it can be seen in figure 2, there is not a wde enough distribuiton of values so as to define an accurate threshold to discard some words, e.g. "it" in topic_id 44 has a weight of 0.027, by discarding words with aweight equal or lower to 0.27 would discard "transmitted" "order" and "possible" from topic_id 26, words that can add meaning to the topic. 
+lets do another run by removing stopwords.
+
+
+
+
+
+Examples of external metrics include:
+• Human Evaluation: Directly assesses the comprehension and usefulness of the topics through human ratings.
+• Semantic Coherence: Evaluates how well the topics match human judgments of semantic relatedness.
+• Held-out Likelihood: Measures the likelihood of held-out documents, with higher likelihood indicating better generalization.
+• Downstream Task Performance: Evaluates how well the topic model performs on extrinsic tasks like text classification or retrieval.
 
 
 
 \section{Model Creation}
 \section{Using the models}
-
+Perplexity: Measures how well a probabilistic model predicts a new sample of data, with
+lower perplexity indicating better model fit.
 
 
 % #NOTE: - The importance of evaluating the performance of a topic modeling algorithm 
