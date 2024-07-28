@@ -1,0 +1,22 @@
+{
+    "stopwords": [
+        "",
+        "shall",
+        "number",
+        "back",
+        "result",
+        "call",
+        "network",
+        "requirements",
+        "specification",
+        "user",
+        "functional",
+        "provided",
+        "information",
+        "defined",
+        "may",
+        "possible",
+        "system",
+        "following"
+    ]
+}

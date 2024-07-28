@@ -6,7 +6,7 @@ from gensim import corpora
 from gensim.corpora import Dictionary
 from gensim.parsing import preprocessing
 from utils import clean_data
-from utils.stopwords import stopwords as stpwrd
+from utils import stpwrds
 from collections import defaultdict
 
 
@@ -42,8 +42,9 @@ class artifacts:
     def initialize_dictionary(self):
         # initialize a Dictionary
         dct = Dictionary()
-        remove_stopwords = True
-        filter_extremes = True
+        # TODO: Fix costum implementation of stopword removal
+        remove_stopwords = False
+        filter_extremes = False
 
         # add more document (extend the vocabulary)
         for artifact in self.artifactsCollection:

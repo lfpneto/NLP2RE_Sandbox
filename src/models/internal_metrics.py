@@ -61,7 +61,7 @@ def cluster_topics(similarity_matrix, num_clusters=20):
     return cluster_assignments
 
 
-def extract_high_similarity_pairs(similarity_matrix, lda_model, threshold=0.7, num_words=10):
+def extract_high_similarity_pairs(similarity_matrix, lda_model, threshold=0.7, num_words=20):
     """
     Extract pairs of topics with similarity higher than a given threshold and their top words.
 

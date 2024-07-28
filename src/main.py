@@ -45,8 +45,10 @@ def main():
 
     # Dictionary from all xml is stored in artifacts
     # FIXME: how can I test the dictionary, e.g contains relevant words in all documents ?
-    # print(f"Dictionary created from {docs.dictionary.num_docs} documents")
-    # print(docs.dictionary)
+    print(f"Dictionary created from {docs.dictionary.num_docs} documents")
+    # Return a list of the n most common words and their counts from the most common to the least.
+    print("Number of unique tokens:", len(docs.dictionary))
+    print(docs.dictionary.most_common(40))
 
     # Find the optimal number of topics
     # FIXME: bow used for analysis is only from one artifact.

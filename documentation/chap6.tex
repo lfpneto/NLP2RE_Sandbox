@@ -47,14 +47,20 @@ As we can see, by not removing stopwords in the cleaned data, the topics identif
 Human Evaluation: Directly assesses the comprehension and usefulness of the topics through human ratings.
 The results that we read in the topic have nothing to do with what is in the requierments, meaning that topic creation has not been sucessful.
 
-topic distance
 
-
-
+the distance between topics is calculated by a cosine similarity matrix. topics with high proximity mean that they are close in meaning or understanding and should be evaluated. As an example, in figure 3, with a relatively low threshold, all topics with a inverse distance (closeness) higher than 30\% where registered. In the example of pai 1, we can see that the tokens "emergency" "shunting" and "railway" are repeated.
+Having unique topics is a good metric of a model.
 
 
 one of the option that could be used to clean the topic from not meaningfull words would be to set a parameter in lda to discard from a topic words that have a a probability lower than a certain value, but has it can be seen in figure 2, there is not a wde enough distribuiton of values so as to define an accurate threshold to discard some words, e.g. "it" in topic_id 44 has a weight of 0.027, by discarding words with aweight equal or lower to 0.27 would discard "transmitted" "order" and "possible" from topic_id 26, words that can add meaning to the topic. 
+
 lets do another run by removing stopwords.
+after removing the stopword and looking at the topics we can see that the word shall is present in almost all topics (figure 4). this is a context specific work, as it is comonly used in requierments.
+Such word can be removed, as they have a high weighting in the topic but do not add anything to to topic syntax comprehensionAdition workds have also been considered to be removed (figure 5). The selection was done by retrieving from the creaated dictionary the most frequent tokens and seeing wich ones did not add meaning to a topic, by theyr ambiguity. 
+
+
+call and calls
+
 
 
 

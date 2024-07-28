@@ -14,9 +14,9 @@ from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem.porter import PorterStemmer
-
-
+from utils import stpwrds
 from utils.utils import load_parameters
+import logging
 
 wn = nltk.WordNetLemmatizer()
 ps = nltk.PorterStemmer()
@@ -30,7 +30,6 @@ try:
     N_GRAM_MIN = params['data_preparation']['tokenization']['n_gram_min']
     N_GRAM_MAX = params['data_preparation']['tokenization']['n_gram_max']
     REMOVE_STOPWORDS = params['data_preparation']['stopwords']['remove_stopwords']
-    STOPWORD_STATIC = params['data_preparation']['stopwords']['stopword_static']
     STOPWORD_DYNAMIC = params['data_preparation']['stopwords']['stopword_dynamic']
     STOPWORD_DYNAMIC_SOURCE = params['data_preparation']['stopwords']['stopword_dynamic_source']
     PORTER_STEMMER = params['data_preparation']['porter_stemmer']
@@ -44,7 +43,6 @@ except Exception as e:
     N_GRAM_MIN = 1
     N_GRAM_MAX = 1
     REMOVE_STOPWORDS = False
-    STOPWORD_STATIC = False
     STOPWORD_DYNAMIC = False
     STOPWORD_DYNAMIC_SOURCE = False
     PORTER_STEMMER = False
@@ -56,7 +54,6 @@ def data_preparation(text,
                      n_gram_min=N_GRAM_MIN,
                      n_gram_max=N_GRAM_MAX,
                      remove_stopwords=REMOVE_STOPWORDS,
-                     stopword_static=STOPWORD_STATIC,
                      stopword_dynamic=STOPWORD_DYNAMIC,
                      stopword_dynamic_source=STOPWORD_DYNAMIC_SOURCE,
                      lemma=LEMMA,
@@ -68,16 +65,24 @@ def data_preparation(text,
     Purpose: Preprocess text with tokenization, optional stopword removal, and either lemmatization or stemming.
     Output : Preprocessed text as a list of tokens
     """
+    try:
+        if not isinstance(text, str):
+            raise TypeError(
+                f"Expected a string, but got {type(text).__name__}")
+
+    except TypeError as e:
+        print(e)
 
     # Tokenize
-    tokens = tokenize(text)
+    tokens = tokenize(text.lower())
+    # text      = 'UIC Project EIRENE System Requirements Specification'
+    # tokens    = ['uic', 'project', 'eirene', 'system', 'requirements', 'specification']
 
     # stopword removal
     if remove_stopwords:
-        tokens = [word for word in tokens if word not in en_stop]
-
+        tokens = stpwrds.remove_static_stopwords(tokens)
         if stopword_dynamic:
-            en_stop.update(stopword_dynamic_source)
+            tokens = stpwrds.remove_dynamic_stopwords(tokens)
 
     # Choose either lemmatization, stemming, or neither
     if lemma:
@@ -138,7 +143,7 @@ def clean_text_original(text):
     return text
 
 
-def clean_text(text, remove_punct=True, remove_stopwords=True):
+def clean_text(text, remove_punct=True, remove_stopwords=REMOVE_STOPWORDS):
     """
     Clean the input text by removing punctuation, stopwords, and performing tokenization.
 

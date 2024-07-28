@@ -5,7 +5,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="req_document.xsd">
 
-    <title>UIC Projec t EIRENE System Requirements Specification</title>
+    <title>UIC Project EIRENE System Requirements Specification</title>
     <version>1.0</version>
     <p id="1">
         <title>Introduction</title>
