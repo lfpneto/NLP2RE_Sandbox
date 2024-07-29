@@ -1,0 +1,851 @@
+{
+    "text": "a) Cab Radio must operate in the extended GSM-R frequency band. (M)",
+    "topics": [
+        {
+            "topic_num": 7,
+            "probability": 0.3881641626358032,
+            "top_words": "cab, radio, free, handheld, incom, go, mobil, call, capabl, test"
+        }
+    ],
+    "matching_requirements": {
+        "2006-eirene_sys_15.xml": [
+            {
+                "req_id": "3.5.1",
+                "text": "The network shall operate in a sub-band, or combination of sub-bands, of the R-GSM band as defined in [EN 301 515, Index [35]]. (M)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "4.5.15",
+                "text": "In normal operation of a mobile radio unit, it shall be expected that a combination of the above environmental conditions will be experienced. (M)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "5.3.8",
+                "text": "Where there is more than one active cab, the radio connection shall be provided using the GSM Multi-Party service. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.3.9",
+                "text": "The call will be established from the active cab of the lead traction vehicle. Each of the other cabs on the train will be contacted using its functional number (registered by the other drivers prior to the establishment of the call). The procedure for setting up a multi-party call is outlined in figure 5-2. The multi-party call shall have \u2018Railway operation\u2019 priority (see section 10.2) and whilst on-going a \u2018multi-drivers\u2019 indication shall be displayed permanently at all Cab radios. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.3.11",
+                "text": "The Cab radio shall be capable of being used as a standard GSM telephone, such that the driver is able to call any valid number subject to closed user group, call barring or other restrictions. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.4.2",
+                "text": "Upon switch on, the Cab radio shall be registered with a mobile network (see section 10.5). (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.4.4",
+                "text": "Upon registration, the mobile shall be accessible by calling the MSISDN or the Engine or Coach number with which it is associated. This shall require the home network database to maintain this correlation. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "5.4.7",
+                "text": "Upon activation of the registration function, a USSD message (see section 11) shall be sent by the Cab radio. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.4.8",
+                "text": "Upon activation of the deregistration function, a USSD message (see section 11) shall be sent by the Cab radio. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.4.9",
+                "text": "Upon detection (automatically or based on a list stored in the Cab radio) of the additional on-train functions for equipment physically connected to the Cab radio, a USSD message (see section 11) shall be sent by the Cab radio after activation of the registration or deregistration function. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.4.11",
+                "text": "On-train functions for equipment physically connected to the Cab radio shall be registered or deregistered automatically based on a USSD message (see section 11) sent by the Cab radio. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.5.20",
+                "text": "The Cab radio shall arbitrate between calls when: - an incoming call is received whilst the Cab radio is in an on-going call; (M) - a Cab radio user attempts to initiate a call whilst the Cab radio is in an on-going call. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.5.21",
+                "text": "The Cab radio shall apply the arbitration rules outlined in Table 5A-1 in Appendix 5A. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.5.22",
+                "text": "Once a call has been established the connected parties shall be able to communicate. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "5.5.24",
+                "text": "Calls shall be able to be terminated by either party subject to the requirements shown in tables 5A-2 and 5A-3. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "5.6.1",
+                "text": "Incoming calls to the Cab radio shall be routed to the correct on-train user or device using information contained in the sub-addressing field. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.6.5",
+                "text": "If directed network selection is implemented, the Cab radio application shall use the GSM \u201cManual\u201d network selection procedure (through the AT interface [EN 301 515, Index [19]]) to instruct the MT to register with the required network. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.6.5i",
+                "text": "The Cab radio should be capable of selecting the most appropriate mobile radio network automatically using the selection criteria stated in section 10.5. (O)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.7.3",
+                "text": "The Cab radio shall be capable of operating within a temperature range of -20\u00b0C to +70\u00b0C. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.7.10",
+                "text": "The Cab radio should be mounted in the train cab in compliance with [prEN 50261]. (O)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.7.13",
+                "text": "The Cab radio shall comply with draft European standard [prEN 50124 part 1] concerning insulation co-ordination with reference to clearances and creepages. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.7.16",
+                "text": "The Cab radio shall withstand the effects of power supply transients as defined in [prEN 50155]. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.7.19",
+                "text": "EMC emission from the Cab radio shall comply with [ENV 50121 parts 1, 2, 3-2 and 4]. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.7.20",
+                "text": "Emissions from the train mounted antenna associated with the Cab radio shall be limited to those specified by [EN 301 515, Index [35]]. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.7.22",
+                "text": "The Cab radio shall pass electrical tests as defined in [IEC 571 parts 1, 2 and 3]. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "6.2.3",
+                "text": "The General purpose radio shall operate as a standard GSM terminal, supplying mobile services as defined in section 4. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "6.4.2",
+                "text": "The General purpose radio shall comply with the core climatic conditions defined in section 4. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "6.4.6",
+                "text": "Changing the battery shall not result in the loss of data stored in the radio. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "7.2.3",
+                "text": "The Operational radio shall operate as a standard GSM terminal, supplying mobile services as defined in section 4. (M)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "7.5.1",
+                "text": "The Operational radio shall comply with the basic standards defined for all EIRENE mobile equipment in section 4. In addition, the Operational radio is specified to allow its use in the operating environment experienced on the operational railway (eg shunting and maintenance), with the specifications in this section taking priority over those in section 4 where any discrepancy is identified. (M)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "7.5.3",
+                "text": "The Operational radio shall be capable of withstanding exposure to extreme environmental conditions [IEC 721 part 1]. (M)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "7.5.5",
+                "text": "SIM cards shall be fixed into the radio such that they can only be removed by the use of a tool. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "7.5.6",
+                "text": "The Operational radio shall be capable of withstanding the following shocks: (M) - semi-sinusoidal shocks of up to 5g for up to 100ms under normal conditions; - shocks of up to 10g for up to 5ms under exceptional conditions; - free fall from 1.0m.",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "7.5.9",
+                "text": "Changing the battery shall not result in the loss of data stored in the radio. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "7.5.11",
+                "text": "The Operational radio should comply with [EN 50081 part 2] (generic EMC for the industrial environment). (O)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "10.3.2",
+                "text": "Access classes should not be used under normal network operating conditions, where the GSM eMLPP may be used to provide a better grade of service to certain users. (O)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "10.4.2",
+                "text": "Any implementation of CUGs must take account of requirements for interoperability. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "10.7.3",
+                "text": "Mobiles shall be capable of operation using algorithms for all countries in which they need to roam. (M)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "11.3.8",
+                "text": "The network operator shall implement the required functionality to validate the information exchanged between the mobile and network on registration and deregistration. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "13.5.2",
+                "text": "Not all calls require confirmation. The application must be able to deduce that a confirmation is necessary from the call priority, as all calls of \u2018Railway emergency\u2019 priority must be confirmed. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "13.5.6",
+                "text": "The user information contained in the confirmation message shall be: (M) - Cab radio: the engine number or train number (if registered); - other mobiles: the user\u2019s functional number (if registered).",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "14.3.2",
+                "text": "If a shunting group ID is activated, the Cab radio shall proceed to re-establish the group call. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            }
+        ],
+        "2007-eirene_fun_7-2.xml": [
+            {
+                "req_id": "2.2.9",
+                "text": "2.2.9 The composition of call groups shall be able to be modified within the network. A single user shall be able to be a member of one or more call groups. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "2.2.14",
+                "text": "2.2.14 The composition of call groups shall be able to be modified within the network. A single user shall be able to be a member of one or more call groups. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "3.1.2",
+                "text": "3.1.2 It may be necessary to supplement this Functional Requirements Specification with special requirements for supporting the train control application. Further information on the communications requirements to support ERTMS can be found in the Summary of ERTMS Communication Requirements document .",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "3.2.2",
+                "text": "3.2.2 The level of coverage should be at least 95% of the time over 95% of the designated coverage area for a radio installed in a vehicle with an external antenna. (O)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "3.3.1",
+                "text": "3.3.1 (Network selection requirements for mobiles have been moved to sections 5, 6 and 7).",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "3.3.4",
+                "text": "3.3.4 During the process of moving from one GSM-R network to another, the system must minimise the inconvenience to the user. (I)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "3.4.2",
+                "text": "3.4.2 The required call set-up times shall be achieved in 95% of cases. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "3.5.8",
+                "text": "3.5.8 Requirement 3.5.7 needs further technical specification changes before field implementation can be achieved. (I)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.1.2",
+                "text": "4.1.2 Three distinct mobile radio types are required, based on the type of role they will perform and the environment in which they will operate, as follows: (I) a) Cab radio for use by the driver of a train and/or by other on-train systems, eg ERTMS/ETCS; b) General purpose radio for general use by railway personnel; c) Operational radio for use by railway personnel involved in train operations such as shunting and trackside maintenance. Note: It is possible that the General purpose and Operational radios may have a number of variants to meet railway requirements (eg handheld and vehicle mounted).",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "4.1.1i",
+                "text": "4.1.1i Where there are mandatory requirements for human-machine interface attributes that are not defined in this specification, the decision for the way of presentation is a national issue. In any case, these national solutions must not conflict with those of the CENELEC Standard, in particular for the actions required from the drivers of trains passing the borders. (I)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.2.2",
+                "text": "4.2.2 The following data applications, identified in section 2, are to be supported for each type of mobile radio: Cab radio General purpose Operational radio radio Text message service M M M General data applications M O O Automatic fax O O O Train control applications O O O Table 4-2: Data applications to be supported",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "4.2.3",
+                "text": "4.2.3 The following call related services are to be supported for each type of mobile radio: Cab radio General purpose Operational radio radio Display of calling user identity M M M Display of called user identity M M M Restriction of display of user identity O O O EIRENE closed user group M O M Call forwarding: - unconditional M O O - if user busy O O O - if no reply O O O - if not reachable O O O Call hold M O O Call waiting M M M Display of call charging information O O O Call barring M O M Auto answer service M O M Call supervisory information M O O Table 4-3: Call related features to be supported",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "4.3.2",
+                "text": "4.3.2 The categories of requirements defined for each type of mobile equipment are as follows: (I) - climatic conditions (temperature, humidity, solar radiation, altitude, etc); - physical conditions (flammability, contamination, physical protection, etc); - mechanical conditions (shock and vibration); - electrical conditions (power supply variation, battery life, overloading, etc); - EMC (both emissions and immunity).",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "4.3.3",
+                "text": "4.3.3 In normal operation of a mobile radio unit, it is expected that a combination of the above environmental conditions will be experienced. (I)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "5.1.1",
+                "text": "5.1.1 This section identifies the functional requirements for the EIRENE Cab radio. It covers the functionality provided by the Cab radio, driver MMI and support to other on-train systems. (I)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.1.1",
+                "text": "5.2.1.1 In this subsection, the functions to be provided by the Cab radio are described. (I)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.2.11",
+                "text": "5.2.2.11 The group identity shall be displayed on the Cab radios of the participating drivers. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.2.28",
+                "text": "5.2.2.28 Whilst on-going, a multi-drivers indication shall be displayed permanently at all Cab radios. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.2.34",
+                "text": "5.2.2.34 In each cab, the call shall be connected to the loudspeaker whilst the handset is on- hook. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.2.65",
+                "text": "5.2.2.65 The functionality to enter and leave shunting mode shall not be available when there are on-going calls involving the Cab radio. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.2.71",
+                "text": "5.2.2.71 Not all communications using the Cab radio will involve the driver. Where these calls involve the Cab radio, the driver shall be provided with an indication that the Cab radio is busy. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.3.3",
+                "text": "5.2.3.3 Powering down the Cab radio shall cause the disconnection of the Cab radio from the mobile network. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.3.4",
+                "text": "5.2.3.4 When switched off, the radio shall retain any numbers which are stored at the time the radio is switched off. (M) Switch radio MMI on/off",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.3.12",
+                "text": "5.2.3.12 It shall be possible to present radio related prompts and information in a number of different languages. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.3.23i",
+                "text": "5.2.3.23i When presented with this list, it shall be possible for the driver (using simple MMI actions) to select the required mobile radio network manually, whereupon the Cab radio shall attempt to attach to this selected network. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.3.24",
+                "text": "5.2.3.24 The manual network selection function shall not be available when there are on-going voice calls involving the Cab radio. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.3.25ii",
+                "text": "5.2.3.25ii The Cab radio should be capable of selecting the mobile radio network as directed by input from an external device (eg a balise). (O)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.3.25vi",
+                "text": "5.2.3.25vi The Cab radio should be capable of selecting the mobile radio network automatically from a list of suitable networks (see section 10.5). (O)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.3.25ix",
+                "text": "5.2.3.25ix Automatic network selection is not suitable for use in areas where there is a risk that the Cab radio will change to a foreign network unpredictably. (I)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.3.28ii",
+                "text": "5.2.3.28ii Data entry may be from either system depending on the operating procedures agreed between the train operator and the railway infrastructure operator. (I)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "5.2.3.37",
+                "text": "5.2.3.37 There shall be a fixed relationship between the telephone numbers of radios installed in the locomotive/coach and the stock number, which shall remain even if the radio is changed. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.3.39",
+                "text": "5.2.3.39 The Cab radio shall have a reconfigurable list of stored numbers that may be used to perform abbreviated dialling to named user identities. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.3.41",
+                "text": "5.2.3.41 It should be possible for the driver to store and overwrite numbers and their details in the Cab radio. (O) Invoke supplementary services",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.4.1",
+                "text": "5.2.4.1 The Cab radio system may be required to be able to handle incoming and outgoing calls not only to and from the driver, but also to and from other on-train users and devices (conductor, public address system, data systems, etc) via appropriate interfaces and ports. (I)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "5.2.4.3",
+                "text": "5.2.4.3 The Cab radio may need to conserve battery power when the radio is powered up but the MMI is switched off. (I) Handling of call priorities",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.4.4",
+                "text": "5.2.4.4 The Cab radio may be required to set up calls from a number of different sources. Therefore, the radio shall provide a priority function for calls from different sources in order to handle contention for the radio. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.4.6",
+                "text": "5.2.4.6 The Cab radio shall be capable of handling contention between calls of differing priorities. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.2.4.13",
+                "text": "5.2.4.13 If run-time diagnostics are implemented, diagnostic tests shall not interfere with normal operation of the Cab radio. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "5.4.4",
+                "text": "5.4.4 Note: there is no requirement for hands free operation. (I)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "5.4.6",
+                "text": "5.4.6 The driver shall be able to adjust the contrast of the display. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "5.9.2",
+                "text": "5.9.2 In addition, individual railways may have requirements to interface to national control/command systems. (I)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "5.10.1",
+                "text": "5.10.1 Other interfaces may be provided in the Cab radio system. (O)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "6.2.3.3",
+                "text": "6.2.3.3 Switching the radio off shall cause the following: (M) - termination of all calls under the control of (ie initiated by) the radio; - disconnection of the radio from the network; - clearing the display and inhibition of functions.",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "6.2.3.4",
+                "text": "6.2.3.4 When switched off, the radio shall retain any settings and numbers which are stored at the time the radio is switched off. (M) Select language",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "6.2.3.6",
+                "text": "6.2.3.6 The user shall be able to select his preferred language for the display; this setting shall be retained by the radio. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "6.2.3.7",
+                "text": "6.2.3.7 When the radio is first powered on, the language that appears on the display shall be the default one set by the national railway. (M) Select mobile radio network",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "6.2.3.13",
+                "text": "6.2.3.13 It shall be possible for the user to store and/or overwrite numbers and their details in the radio. (M) Computer interface",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "6.3.2",
+                "text": "6.3.2 The General purpose radio should be small, compact and easy to carry. (I)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "6.3.4",
+                "text": "6.3.4 The weight of the General purpose radio including battery should not exceed 250g. (O) Electrical",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "6.3.6",
+                "text": "6.3.6 Changing the battery should not result in losing data stored in the radio. (O)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "7.2.3.3",
+                "text": "7.2.3.3 Switching the radio off shall cause the following: (M) - termination of all calls under the control of (ie initiated by) the radio; - disconnection of the radio from the network; - clearing the display and inhibition of functions.",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "7.2.3.4",
+                "text": "7.2.3.4 When switched off, the radio shall retain any settings and numbers which are stored at the time the radio is switched off. (M) Select language",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "7.2.3.6",
+                "text": "7.2.3.6 The user shall be able to select his preferred language for the display; this setting shall be retained by the radio. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "7.2.3.7",
+                "text": "7.2.3.7 When the radio is first powered on, the language that appears on the display shall be the default one set by the national railway. (M) Select mobile radio network",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "7.2.3.13",
+                "text": "7.2.3.13 It shall be possible for the user to store and/or overwrite numbers and their details in the radio. (M) Computer interface",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "7.3.1",
+                "text": "7.3.1 The Operational radio shall comply with the basic standards defined for all EIRENE mobile equipment in section 4.3 and this section. The Operational radio is specified to allow its use in the operating environment experienced on the operational railway (eg shunting and maintenance). (I) Climatic conditions",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "7.3.2",
+                "text": "7.3.2 The Operational radio should be capable of withstanding exposure to the following extreme environmental conditions: (O) - salt mist spray; - torrential rain at up to 2mm/min; - heavy hail; - snow and sand storms; - accretion of ice; - corrosive atmospheres (including sulphur dioxide, hydrogen sulphide, nitrogen oxides, ozone, organic hydrocarbons). Physical conditions",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "7.3.4",
+                "text": "7.3.4 The Operational radio should have a carry feature that allows the operator to instantly have both hands free without dropping the radio. It should be possible to release the carry feature instantly in the event that the radio is caught on a projecting part of a moving vehicle. (O)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "7.3.8",
+                "text": "7.3.8 The weight of the Operational radio including battery should not exceed 800g. (O) Electrical",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "7.3.9",
+                "text": "7.3.9 It shall be possible to change the battery without losing data stored in the radio. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "11.2.1.7",
+                "text": "11.2.1.7 A user shall be able to set up a functional number on one network, and cancel the number from another network. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "11.2.2.1",
+                "text": "11.2.2.1 Functional numbers must be unique within the domain of operation. Since the number must be independent of networks, each number must be unique across all networks (including implementation of EIRENE facilities on public networks). (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "11.3.2.3",
+                "text": "11.3.2.3 It shall be possible to register up to ten functional numbers to items of equipment physically connected to the Cab radio within 30 seconds. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "11.3.3.3",
+                "text": "11.3.3.3 It shall be possible to deregister up to ten functional numbers to items of equipment physically connected to the Cab radio within 30 seconds. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "13.4.3",
+                "text": "13.4.3 The confirmation message shall commence at the end of the call or if the radio moves out of the call area. (M)",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            }
+        ],
+        "2007-ertms.xml": [
+            {
+                "req_id": "3.9.1.1",
+                "text": "The ETCS trainborne equipment shall be capable of supervising the following operational states: - Full Supervision operation - Partial Supervision operation - Staff Responsible operation - On Sight operation - Unfitted Line operation - Train Trip operation - Post Trip operation - National operation (STM) - Tandem operation - Multiple operation - Shunting operation - Stand By operation - Reversing operation",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "4.1.2.2",
+                "text": "The driver shall be able to select Train Data Entry on the DMI.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.1.2.9",
+                "text": "The driver shall be able to consult train data when the train is stationary or moving.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.1.2.13",
+                "text": "The system for Train Data Entry shall provide for the input of other data required by STMs connected to ETCS. This may require additional items, not required for ETCS, to be entered.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.1.3.3",
+                "text": "It shall be possible to manually select Shunting from Stand By operation, Full Supervision operation or Partial Supervision operation",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "4.3.9.2",
+                "text": "When the traction unit has come to a standstill, the driver shall be able to release the emergency brake.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.6.4.2",
+                "text": "The driver shall be able to override the function when the train is stationary.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.6.12.4",
+                "text": "When the traction unit is stationary the driver shall be required to acknowledge the train trip condition. This acknowledgement will release the emergency brake.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.9.5.4",
+                "text": "The driver shall be able to confirm the train integrity to the RBC manually. The confirmation requires the train to be stationary.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.9.10.2",
+                "text": "The co-operative revocation of the MA shall be possible to a new target location, proposed from RBC.",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "4.9.10.1",
+                "text": "The Reversing function shall only be possible in one active cab which is not closed at any time during the procedure.",
+                "matching_topic_ids": [
+                    7.0
+                ]
+            },
+            {
+                "req_id": "4.9.10.5",
+                "text": "The driver shall be able to use the Reversing function without needing to re-confirm the train data.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            }
+        ]
+    }
+}

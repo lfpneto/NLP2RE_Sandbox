@@ -1,0 +1,670 @@
+{
+    "text": "All EIRENE mobiles must operate in public GSM 900 frequency bands. (M)",
+    "topics": [],
+    "matching_requirements": {
+        "2006-eirene_sys_15.xml": [
+            {
+                "req_id": "3.5.1",
+                "text": "The network shall operate in a sub-band, or combination of sub-bands, of the R-GSM band as defined in [EN 301 515, Index [35]]. (M)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "4.1.5",
+                "text": "All SIM cards used in EIRENE mobiles shall comply with the requirements of the MORANE FFFIS for GSM-R SIM Cards [MORANE SIM]. (M)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "4.2.2",
+                "text": "The mobile radio antenna installation on vehicles shall be designed so as to ensure that mobiles operate correctly in networks which conform to the design criteria defined in section 3. (M)",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            },
+            {
+                "req_id": "4.5.5",
+                "text": "Any environmental and physical requirements stated may be superseded by national requirements provided the national standards provide a higher level of environmental and physical protection. Stricter national standards shall not prevent the use of other EIRENE mobiles in that country. (M)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "4.5.7",
+                "text": "All design, manufacturing, testing and installation of EIRENE mobile radio equipment shall comply with the quality procedures defined in [ISO 9001]. (M)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "4.5.8",
+                "text": "EIRENE mobile equipment shall be capable of operating over a standard range of temperatures from -20\u00b0C to +55\u00b0C. (M)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "4.5.11",
+                "text": "EIRENE mobile equipment shall be capable of operating between altitudes of -100m and 1800m, referenced to sea level. (M)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "4.5.15",
+                "text": "In normal operation of a mobile radio unit, it shall be expected that a combination of the above environmental conditions will be experienced. (M)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "4.5.18",
+                "text": "EIRENE mobile equipment shall be capable of being subjected to both sinusoidal and random vibration. (M)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "5.4.4",
+                "text": "Upon registration, the mobile shall be accessible by calling the MSISDN or the Engine or Coach number with which it is associated. This shall require the home network database to maintain this correlation. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "5.5.22",
+                "text": "Once a call has been established the connected parties shall be able to communicate. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "5.5.24",
+                "text": "Calls shall be able to be terminated by either party subject to the requirements shown in tables 5A-2 and 5A-3. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "7.2.3",
+                "text": "The Operational radio shall operate as a standard GSM terminal, supplying mobile services as defined in section 4. (M)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "7.5.1",
+                "text": "The Operational radio shall comply with the basic standards defined for all EIRENE mobile equipment in section 4. In addition, the Operational radio is specified to allow its use in the operating environment experienced on the operational railway (eg shunting and maintenance), with the specifications in this section taking priority over those in section 4 where any discrepancy is identified. (M)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "7.5.3",
+                "text": "The Operational radio shall be capable of withstanding exposure to extreme environmental conditions [IEC 721 part 1]. (M)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "7.5.6",
+                "text": "The Operational radio shall be capable of withstanding the following shocks: (M) - semi-sinusoidal shocks of up to 5g for up to 100ms under normal conditions; - shocks of up to 10g for up to 5ms under exceptional conditions; - free fall from 1.0m.",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "9.4.2",
+                "text": "In addition, Breakout Codes (BCs) shall be used to allow users within the GSM-R network to access external numbers. (M)",
+                "matching_topic_ids": [
+                    24.0
+                ]
+            },
+            {
+                "req_id": "9.6.2",
+                "text": "GSM-R networks shall recognise International EIRENE Numbers starting with the IC of the GSM-R network in which the calling party is currently operating as National EIRENE Numbers. (M)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "9.6.4",
+                "text": "The fields of an International Functional Number shall be defined as follows: (M) - 1) International Code (IC) The International Code field shall consist of three digits and shall be based on the [ITU-T E.164] country code (XCC or CCC), allocated by the UIC on a networkby- network basis. - 2) National EIRENE Number (NEN) The format of the National EIRENE Number field shall be as defined in subsection 9.5.",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "9.7.3",
+                "text": "Within each GSM-R network, the following relationships between the MSISDN Subscriber Number and the National EIRENE Number can be identified: - the MSISDN Subscriber Number shall be equal to the National EIRENE Number for Call Type = 8; (M) - the MSISDN number may be equal to the National EIRENE Number for any other Call Type. (O)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "9.7.4",
+                "text": "It shall be possible for authorised subscribers of fixed and mobile networks to call mobiles using the appropriate MSISDN number. (M)",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            },
+            {
+                "req_id": "9.8.1",
+                "text": "For certain functions, standardised short codes shall be implemented for mobile originated calls. (M)",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            },
+            {
+                "req_id": "9.8.5",
+                "text": "In addition, the network shall support the special short codes as defined in table 9-11. (M)",
+                "matching_topic_ids": [
+                    24.0
+                ]
+            },
+            {
+                "req_id": "9.10.1",
+                "text": "Access to other GSM-R networks shall be possible by using a Breakout Code (BC) as part of the dialled number. (M) Access to other GSM-R networks may be possible by using an Access Code (AC) as part of the dialled number if the NSN (National Significant Number) following the CC (Country Code) is assigned by the national telecommunication regulator to the GSM-R operator. (O) Note: NSN=NDC (National Destination Code) + SN (Subscriber Number) The BC for access to other GSM-R networks is defined in table 9-12a, and is followed by the full international EIRENE number of the called party. (M)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "9.10.2",
+                "text": "The GSM-R network shall allow users direct access to public networks, subject to call barring restrictions. (M)",
+                "matching_topic_ids": [
+                    24.0
+                ]
+            },
+            {
+                "req_id": "9.10.3",
+                "text": "Where access to public networks is allowed, this shall be performed by using an Access Code (AC), defined in table 9-13, followed by the international or national number of the called subscriber as defined in [ITU-T 164]. (M)",
+                "matching_topic_ids": [
+                    24.0
+                ]
+            },
+            {
+                "req_id": "9.11.1",
+                "text": "Access to the GSM-R network should be performed by dialling an EIRENE Network Access Number (ENAN)8, followed by the relevant National or International Functional Number as defined in subsections 9.5 and 9.6 respectively. (O)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "10.3.2",
+                "text": "Access classes should not be used under normal network operating conditions, where the GSM eMLPP may be used to provide a better grade of service to certain users. (O)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "10.3.3",
+                "text": "For consistent working on public networks and in international roaming, the use of access classes in a railway network shall comply with the GSM specification. (M)",
+                "matching_topic_ids": [
+                    24.0
+                ]
+            },
+            {
+                "req_id": "10.4.2",
+                "text": "Any implementation of CUGs must take account of requirements for interoperability. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "10.7.3",
+                "text": "Mobiles shall be capable of operation using algorithms for all countries in which they need to roam. (M)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "11.3.8",
+                "text": "The network operator shall implement the required functionality to validate the information exchanged between the mobile and network on registration and deregistration. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "11.3.9i",
+                "text": "In the event of a registration procedure failing owing to the functional number already being registered to another mobile, the Cab radio shall be capable of providing the user with the ability to perform automatically the forced de-registration of the previously registered mobile and the registration of this functional number to the user\u2019s mobile. This shall result in the following sequence of actions being performed by the user\u2019s Cab radio (see 11.3.7 for details of message structure): (M) - 1. Send interrogation message (from mobile to network). - 2. Receive MSISDN (from network to mobile). - 3. Send a forced de-registration message (from mobile to network). - 4. Receive the answer (from network to mobile). - 5. Send a registration message (from mobile to network). - 6. Receive the answer (from network to mobile). - 7. Inform the user whether the registration of the functional number to the user\u2019s mobile was successful (performed by the mobile).",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            },
+            {
+                "req_id": "11.3.14",
+                "text": "Re-registration of on-train functional numbers based on the train number shall be performed every time a train leaves one EIRENE network and enters into another EIRENE network. (M)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "11.3.17",
+                "text": "The exchange of information between EIRENE networks is handled by the GMSCs and shall use the standardised protocol as detailed in section 11.6. (M)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "13.4.2",
+                "text": "All Railway emergency group IDs required for interoperability and appropriate to the operation of the mobile shall maintain active status whilst the mobile is powered up. (M)",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            },
+            {
+                "req_id": "13.5.2",
+                "text": "Not all calls require confirmation. The application must be able to deduce that a confirmation is necessary from the call priority, as all calls of \u2018Railway emergency\u2019 priority must be confirmed. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "13.5.4",
+                "text": "After clear down of the Railway Emergency call, the mobile application shall start the confirmation process by automatically originating a call. In order to avoid network congestion the call set up shall be delayed by a random offset. (M)",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            },
+            {
+                "req_id": "13.5.7",
+                "text": "Confirmation messages shall be sent to a confirmation centre using a defined short code (see table 9-10), which shall be associated with the GSM network. (M)",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            },
+            {
+                "req_id": "13.5.9",
+                "text": "The user-to-user information elements in the following messages, as defined in [EN 301 515, Index [16]], shall be used for the confirmation of high priority calls: (M) - SETUP: transfer of confirmation message to confirmation centre; - RELEASE COMPLETE: acknowledgement of the confirmation message.",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            }
+        ],
+        "2007-eirene_fun_7-2.xml": [
+            {
+                "req_id": "2.2.9",
+                "text": "2.2.9 The composition of call groups shall be able to be modified within the network. A single user shall be able to be a member of one or more call groups. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "2.2.14",
+                "text": "2.2.14 The composition of call groups shall be able to be modified within the network. A single user shall be able to be a member of one or more call groups. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "3.1.2",
+                "text": "3.1.2 It may be necessary to supplement this Functional Requirements Specification with special requirements for supporting the train control application. Further information on the communications requirements to support ERTMS can be found in the Summary of ERTMS Communication Requirements document .",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "3.2.3",
+                "text": "3.2.3 The network shall support all EIRENE-compliant mobiles. (M)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "3.3.1",
+                "text": "3.3.1 (Network selection requirements for mobiles have been moved to sections 5, 6 and 7).",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "3.3.4",
+                "text": "3.3.4 During the process of moving from one GSM-R network to another, the system must minimise the inconvenience to the user. (I)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "3.4.2",
+                "text": "3.4.2 The required call set-up times shall be achieved in 95% of cases. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "3.5.1",
+                "text": "3.5.1 Where fixed network users are involved in a group or broadcast call, fixed network users will be pre-defined and will not change during the course of the call. (I)",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            },
+            {
+                "req_id": "3.5.8",
+                "text": "3.5.8 Requirement 3.5.7 needs further technical specification changes before field implementation can be achieved. (I)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.1.1i",
+                "text": "4.1.1i Where there are mandatory requirements for human-machine interface attributes that are not defined in this specification, the decision for the way of presentation is a national issue. In any case, these national solutions must not conflict with those of the CENELEC Standard, in particular for the actions required from the drivers of trains passing the borders. (I)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.3.2",
+                "text": "4.3.2 The categories of requirements defined for each type of mobile equipment are as follows: (I) - climatic conditions (temperature, humidity, solar radiation, altitude, etc); - physical conditions (flammability, contamination, physical protection, etc); - mechanical conditions (shock and vibration); - electrical conditions (power supply variation, battery life, overloading, etc); - EMC (both emissions and immunity).",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "4.3.3",
+                "text": "4.3.3 In normal operation of a mobile radio unit, it is expected that a combination of the above environmental conditions will be experienced. (I)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "4.3.4",
+                "text": "4.3.4 Any environmental and physical requirements stated may be superseded by national requirements if the national standards provide a higher level of environmental and physical protection. However, stricter national standards shall not prevent the use of other EIRENE mobiles in that country. (M)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "4.3.5",
+                "text": "4.3.5 All design, testing and installation of EIRENE mobile radio equipment shall comply with the quality procedures defined in ISO 9001 . (M) Climatic conditions",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "4.3.10",
+                "text": "4.3.10 EIRENE mobiles will generate electromagnetic emissions. It is the responsibility of national railways operating EIRENE networks to ensure that EIRENE equipment does not interfere with the normal operation of any on-train or ground-based systems. (I)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "5.2.3.28ii",
+                "text": "5.2.3.28ii Data entry may be from either system depending on the operating procedures agreed between the train operator and the railway infrastructure operator. (I)",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "5.2.4.1",
+                "text": "5.2.4.1 The Cab radio system may be required to be able to handle incoming and outgoing calls not only to and from the driver, but also to and from other on-train users and devices (conductor, public address system, data systems, etc) via appropriate interfaces and ports. (I)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "5.4.4",
+                "text": "5.4.4 Note: there is no requirement for hands free operation. (I)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "5.4.6",
+                "text": "5.4.6 The driver shall be able to adjust the contrast of the display. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "5.9.2",
+                "text": "5.9.2 In addition, individual railways may have requirements to interface to national control/command systems. (I)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "6.2.3.6",
+                "text": "6.2.3.6 The user shall be able to select his preferred language for the display; this setting shall be retained by the radio. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "6.2.3.8",
+                "text": "6.2.3.8 Where more than one mobile radio network is available for use by a mobile, the selection of the network to use shall be automatic (see section 10.5). (M)",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            },
+            {
+                "req_id": "7.2.3.6",
+                "text": "7.2.3.6 The user shall be able to select his preferred language for the display; this setting shall be retained by the radio. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "7.2.3.8",
+                "text": "7.2.3.8 Where more than one mobile radio network is available for use by a mobile, the selection of the network to use shall be automatic (see section 10.5). (M)",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            },
+            {
+                "req_id": "7.3.1",
+                "text": "7.3.1 The Operational radio shall comply with the basic standards defined for all EIRENE mobile equipment in section 4.3 and this section. The Operational radio is specified to allow its use in the operating environment experienced on the operational railway (eg shunting and maintenance). (I) Climatic conditions",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "7.3.2",
+                "text": "7.3.2 The Operational radio should be capable of withstanding exposure to the following extreme environmental conditions: (O) - salt mist spray; - torrential rain at up to 2mm/min; - heavy hail; - snow and sand storms; - accretion of ice; - corrosive atmospheres (including sulphur dioxide, hydrogen sulphide, nitrogen oxides, ozone, organic hydrocarbons). Physical conditions",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "10.3.1",
+                "text": "10.3.1 Various types of call restriction may be employed by the railways as an additional security measure. Such facilities may be particularly important if public network access to the radio system is provided (eg to prevent members of the public calling drivers and drivers calling members of the public). (O)",
+                "matching_topic_ids": [
+                    24.0
+                ]
+            },
+            {
+                "req_id": "10.4.1",
+                "text": "10.4.1 A mobile may be a member of a number of groups. It shall be possible to activate or deactivate the mobiles subscription to these groups. (M)",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            },
+            {
+                "req_id": "10.5.1",
+                "text": "10.5.1 Authorised networks shall be listed (or automatically selected if automatic selection has been enabled) in the following order: (M) - home EIRENE network; - foreign EIRENE networks; - public networks.",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "10.6.3",
+                "text": "10.6.3 If required, a railway may make additional restrictions to the access matrix. (O)",
+                "matching_topic_ids": [
+                    24.0
+                ]
+            },
+            {
+                "req_id": "11.2.1.7",
+                "text": "11.2.1.7 A user shall be able to set up a functional number on one network, and cancel the number from another network. (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "11.2.1.10",
+                "text": "11.2.1.10It shall be possible to call EIRENE users by functional numbers from a wide range of terminals (EIRENE and non-EIRENE). Examples include EIRENE mobiles, controller terminals, railway fixed network telephones and public telephones. (All such calls will be subject to any access restrictions see section 10.3.) (M)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "11.2.2.1",
+                "text": "11.2.2.1 Functional numbers must be unique within the domain of operation. Since the number must be independent of networks, each number must be unique across all networks (including implementation of EIRENE facilities on public networks). (M)",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "11.2.2.3",
+                "text": "11.2.2.3 If alphanumeric numbers are applied by a national railway, the railway will be responsible for the translation to unique numeric functional numbers compatible with the EIRENE specification. (I)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "11.4.6",
+                "text": "11.4.6 As a minimum, the location information used by the EIRENE system shall be derived from that available from the network itself (eg current cell or base station serving the mobile). (M)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "13.4.2",
+                "text": "13.4.2 The confirmation shall be generated automatically without input from the user. (M)",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            },
+            {
+                "req_id": "13.4.5",
+                "text": "13.4.5 For Railway emergency calls initiated by a mobile, the automatic confirmation message of the initiating mobile shall contain: (M) - the time at call establishment; - the time at clear down; - the functional number of the call originator; - the train number and engine number of the call originator, if a train.",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            },
+            {
+                "req_id": "13.4.6",
+                "text": "13.4.6 For Railway emergency calls received by a mobile, the automatic confirmation message of the receiving mobile shall contain: (M) - the time at which the call was first received; - the time at which the call was lost (or terminated); - the group identity of the sender; - the functional number of the recipient; - the train number and engine number of the recipient, if a train.",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            },
+            {
+                "req_id": "13.4.8",
+                "text": "13.4.8 The performance of the confirmation procedure shall not be dependent upon the current use of the mobile and shall not overload the network. (M)",
+                "matching_topic_ids": [
+                    11.0
+                ]
+            },
+            {
+                "req_id": "14.3.5",
+                "text": "14.3.5 National railways will be responsible for limiting the availability of equipment that is capable of taking part in shunting communications to persons that are authorised to engage in such communications. (I)",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            }
+        ],
+        "2007-ertms.xml": [
+            {
+                "req_id": "3.7.1.1",
+                "text": "ETCS shall be compatible with existing national systems listed in the CCS TSI such that it does not interfere with the national systems and is not interfered with by the national systems.",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "3.9.1.1",
+                "text": "The ETCS trainborne equipment shall be capable of supervising the following operational states: - Full Supervision operation - Partial Supervision operation - Staff Responsible operation - On Sight operation - Unfitted Line operation - Train Trip operation - Post Trip operation - National operation (STM) - Tandem operation - Multiple operation - Shunting operation - Stand By operation - Reversing operation",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "3.9.1.2c",
+                "text": "If, as a result of an automatic transition, except for transitions to and from National Operation (STM), the responsibility for the driver increases, the ETCS shall seek an acknowledgement from the driver, whether the train is stationary or not.",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "3.10.1.1",
+                "text": "The ETCS on-board shall be capable of receiving National values from the trackside to adapt to National requirements",
+                "matching_topic_ids": [
+                    34.0
+                ]
+            },
+            {
+                "req_id": "4.1.2.2",
+                "text": "The driver shall be able to select Train Data Entry on the DMI.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.1.2.9",
+                "text": "The driver shall be able to consult train data when the train is stationary or moving.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.1.2.13",
+                "text": "The system for Train Data Entry shall provide for the input of other data required by STMs connected to ETCS. This may require additional items, not required for ETCS, to be entered.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.1.3.3",
+                "text": "It shall be possible to manually select Shunting from Stand By operation, Full Supervision operation or Partial Supervision operation",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "4.3.9.2",
+                "text": "When the traction unit has come to a standstill, the driver shall be able to release the emergency brake.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.6.4.2",
+                "text": "The driver shall be able to override the function when the train is stationary.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.6.12.4",
+                "text": "When the traction unit is stationary the driver shall be required to acknowledge the train trip condition. This acknowledgement will release the emergency brake.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.9.5.4",
+                "text": "The driver shall be able to confirm the train integrity to the RBC manually. The confirmation requires the train to be stationary.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            },
+            {
+                "req_id": "4.9.10.2",
+                "text": "The co-operative revocation of the MA shall be possible to a new target location, proposed from RBC.",
+                "matching_topic_ids": [
+                    49.0
+                ]
+            },
+            {
+                "req_id": "4.9.10.5",
+                "text": "The driver shall be able to use the Reversing function without needing to re-confirm the train data.",
+                "matching_topic_ids": [
+                    78.0
+                ]
+            }
+        ]
+    }
+}

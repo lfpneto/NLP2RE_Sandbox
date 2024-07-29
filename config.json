@@ -18,7 +18,7 @@
             "stopword_dynamic_source": "custom_stopwords.json"
         },
         "lemma": false,
-        "stemma": false,
+        "stemma": true,
         "porter_stemmer": false
     },
     "topic_similarity_threshold": 0.6,
@@ -29,9 +29,9 @@
     },
     "lda": {
         "num_topics": 85,
-        "passes": 10,
+        "passes": 15,
         "eval_every": 1,
-        "iterations": 2,
-        "minimum_probability": 1.0
+        "iterations": 100,
+        "minimum_probability": 0.01
     }
 }
