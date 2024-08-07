@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../../Users/lfneto/Downloads/mesw-distrib-v2021"
 		}
 	],
 	"settings": {},
